@@ -1,0 +1,72 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "10-Year Enrolment Trends: Computer Science vs Engineering (2015–2024)",
+    "subtitle": "Comparison of higher education domestic student enrolment trajectories",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 580,
+  "height": 380,
+  "data": {
+    "url": "data/cs_vs_eng_historical.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3,
+        "point": {
+          "filled": true,
+          "size": 60
+        }
+      },
+      "encoding": {
+        "x": {
+          "field": "Year",
+          "type": "quantitative",
+          "title": "Academic Year",
+          "axis": {
+            "format": "d",
+            "labelFontSize": 11,
+            "titleFontSize": 13,
+            "tickCount": 10
+          }
+        },
+        "y": {
+          "field": "Enrolments",
+          "type": "quantitative",
+          "title": "Domestic Student Enrolments",
+          "axis": {
+            "labelFontSize": 11,
+            "titleFontSize": 13
+          }
+        },
+        "color": {
+          "field": "Discipline",
+          "type": "nominal",
+          "title": "Discipline",
+          "scale": {
+            "domain": [
+              "Computer Science & IT",
+              "Engineering & Related",
+              "Mathematical Sciences"
+            ],
+            "range": ["#0077b6", "#e63946", "#2a9d8f"]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+        "tooltip": [
+          {"field": "Year", "type": "quantitative", "title": "Year"},
+          {"field": "Discipline", "type": "nominal", "title": "Discipline"},
+          {"field": "Enrolments", "type": "quantitative", "title": "Enrolments", "format": ","}
+        ]
+      }
+    }
+  ]
+}

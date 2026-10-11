@@ -33,7 +33,7 @@ vegaEmbed('#chart_7', 'jsons/chart_7_sankey.json', { "actions": false })
   .then(() => console.log("Chart 7 loaded"))
   .catch(console.error);
 
-  // Chart 8: Hexagonal Tile Map
+// Chart 8: Hexagonal Tile Map
 vegaEmbed('#chart_8', 'jsons/chart_8_hexmap.json', { "actions": false })
   .then(() => console.log("Chart 8 loaded"))
   .catch(console.error);
@@ -46,4 +46,13 @@ vegaEmbed('#chart_9', 'jsons/chart_9_treemap.json', { "actions": false })
 // Chart 10: Graduate Performance Parallel Coordinates Plot
 vegaEmbed('#chart_10', 'jsons/chart_10_parallel.json', { "actions": false })
   .then(() => console.log("Chart 10 loaded"))
+  .catch(console.error);
+// Chart 11: Projected Industry Employment Streamgraph
+vegaEmbed('#chart_11', 'jsons/chart_11_streamgraph.json', { "actions": false })
+  .then(() => console.log("Chart 11 loaded"))
+  .catch(console.error);
+
+// Chart 12: Historical 10-Year Multi-line Plot
+vegaEmbed('#chart_12', 'jsons/chart_12_multiline.json', { "actions": false })
+  .then(() => console.log("Chart 12 loaded"))
   .catch(console.error);
