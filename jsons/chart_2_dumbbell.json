@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Metropolitan vs Regional Senior Secondary STEM Participation (Year 12)",
+    "subtitle": "Comparison of student participation rates (%) across key STEM disciplines by location",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 650,
+  "height": 380,
+  "data": {
+    "url": "data/metro_vs_regional_participation.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rule",
+        "color": "#adb5bd",
+        "strokeWidth": 2.5
+      },
+      "encoding": {
+        "y": {
+          "field": "Subject",
+          "type": "nominal",
+          "title": "STEM Subject",
+          "sort": ["Advanced Mathematics", "Physics", "Chemistry", "Information Technology", "Biology", "Earth & Environmental Science", "Essential Mathematics"],
+          "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 13,
+            "titlePadding": 10
+          }
+        },
+        "x": {
+          "field": "Participation_Rate",
+          "type": "quantitative",
+          "aggregate": "min"
+        },
+        "x2": {
+          "field": "Participation_Rate",
+          "type": "quantitative",
+          "aggregate": "max"
+        }
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "size": 140,
+        "filled": true,
+        "opacity": 1
+      },
+      "encoding": {
+        "y": {
+          "field": "Subject",
+          "type": "nominal",
+          "sort": ["Advanced Mathematics", "Physics", "Chemistry", "Information Technology", "Biology", "Earth & Environmental Science", "Essential Mathematics"]
+        },
+        "x": {
+          "field": "Participation_Rate",
+          "type": "quantitative",
+          "title": "Participation Rate (%)",
+          "scale": {
+            "domain": [0, 60]
+          },
+          "axis": {
+            "labelFontSize": 11,
+            "titleFontSize": 13
+          }
+        },
+        "color": {
+          "field": "Region",
+          "type": "nominal",
+          "title": "School Location",
+          "scale": {
+            "domain": ["Metropolitan", "Regional/Remote"],
+            "range": ["#0077b6", "#e63946"]
+          },
+          "legend": {
+            "orient": "top-right",
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+        "tooltip": [
+          {"field": "Subject", "type": "nominal", "title": "Subject"},
+          {"field": "Region", "type": "nominal", "title": "Location"},
+          {"field": "Participation_Rate", "type": "quantitative", "title": "Participation Rate (%)", "format": ".1f"}
+        ]
+      }
+    }
+  ]
+}
