@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "University STEM Enrolments across Australian Campuses (2024)",
+  "width": 700,
+  "height": 450,
+  "projection": {"type": "equirectangular"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-states.json",
+        "format": {"type": "geojson"}
+      },
+      "mark": {"type": "geoshape", "fill": "#e0e0e0", "stroke": "white"}
+    },
+    {
+      "data": {"url": "data/university_stem_enrolments_2024.csv"},
+      "mark": {"type": "circle", "tooltip": true},
+      "encoding": {
+        "longitude": {"field": "Longitude", "type": "quantitative"},
+        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "size": {
+          "field": "Total_STEM",
+          "type": "quantitative",
+          "title": "Total STEM Enrolments",
+          "scale": {"range": [50, 1000]}
+        },
+        "color": {
+          "field": "State",
+          "type": "nominal",
+          "scale": {"scheme": "category10"}
+        }
+      }
+    }
+  ]
+}

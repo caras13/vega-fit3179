@@ -1,0 +1,52 @@
+State,Institution,Non_English_Speaking,Disability,Women_In_Non_Traditional,First_Nations,Low_SES
+State,Institution,0.0,0.0,0.0,0.0,0.0
+New South Wales,Avondale University,20.0,152.0,29.0,34.0,239.0
+New South Wales,Charles Sturt University,508.0,3121.0,2954.0,1270.0,7948.0
+New South Wales,Macquarie University,1029.0,3763.0,6216.0,393.0,2249.0
+New South Wales,Southern Cross University,183.0,1424.0,1042.0,624.0,3118.0
+New South Wales,The University of New England,168.0,3902.0,3292.0,937.0,4467.0
+New South Wales,The University of Newcastle,480.0,5895.0,2958.0,1441.0,6459.0
+New South Wales,The University of Sydney,1946.0,5174.0,7520.0,550.0,2402.0
+New South Wales,University of New South Wales,2081.0,4784.0,10951.0,476.0,2980.0
+New South Wales,University of Technology Sydney,1418.0,3786.0,9916.0,407.0,2880.0
+New South Wales,University of Wollongong,212.0,1869.0,2486.0,733.0,3332.0
+New South Wales,Western Sydney University,2104.0,1860.0,4850.0,833.0,7140.0
+New South Wales,Non-University Higher Education Institutions,1324.0,3636.0,7465.0,906.0,5794.0
+Victoria,Deakin University,1157.0,7638.0,6722.0,646.0,4629.0
+Victoria,Federation University Australia,397.0,1398.0,581.0,140.0,2196.0
+Victoria,La Trobe University,932.0,3873.0,2955.0,375.0,4379.0
+Victoria,Monash University,2794.0,5654.0,11662.0,449.0,4071.0
+Victoria,RMIT University,2519.0,4526.0,8245.0,222.0,3792.0
+Victoria,Swinburne University of Technology,539.0,2475.0,3511.0,497.0,4735.0
+Victoria,The University of Melbourne,1722.0,4985.0,9050.0,523.0,2285.0
+Victoria,University of Divinity,21.0,131.0,0.0,11.0,228.0
+Victoria,Victoria University,1326.0,1576.0,1330.0,203.0,3287.0
+Victoria,Non-University Higher Education Institutions,222.0,1705.0,1069.0,77.0,1010.0
+Queensland,Bond University,12.0,225.0,445.0,66.0,183.0
+Queensland,CQUniversity,274.0,1463.0,1354.0,1019.0,7197.0
+Queensland,Griffith University,1198.0,4846.0,5641.0,1119.0,5972.0
+Queensland,James Cook University,266.0,1119.0,1166.0,697.0,3304.0
+Queensland,Queensland University of Technology,941.0,3231.0,8683.0,948.0,5113.0
+Queensland,The University of Queensland,1190.0,5517.0,7372.0,529.0,3292.0
+Queensland,University of Southern Queensland,543.0,2141.0,1865.0,900.0,6305.0
+Queensland,University of the Sunshine Coast,196.0,3218.0,2081.0,695.0,4145.0
+Queensland,Non-University Higher Education Institutions,78.0,648.0,112.0,169.0,1456.0
+Western Australia,Curtin University,921.0,4996.0,5480.0,867.0,7677.0
+Western Australia,Edith Cowan University,470.0,2313.0,1917.0,385.0,4252.0
+Western Australia,Murdoch University,224.0,2324.0,2218.0,264.0,2614.0
+Western Australia,The University of Notre Dame Australia,97.0,1333.0,629.0,176.0,1044.0
+Western Australia,The University of Western Australia,515.0,3396.0,5365.0,252.0,2065.0
+Western Australia,Non-University Higher Education Institutions,41.0,0.0,97.0,9.0,212.0
+South Australia,Flinders University,562.0,1589.0,1903.0,407.0,3938.0
+South Australia,The University of Adelaide,666.0,3176.0,2994.0,264.0,2804.0
+South Australia,Torrens University Australia,0.0,607.0,4021.0,409.0,3010.0
+South Australia,University of South Australia,935.0,5762.0,4159.0,565.0,6921.0
+South Australia,Private Universities (Table C) and Non-University Higher Education Institutions,47.0,188.0,1044.0,119.0,756.0
+Tasmania,University of Tasmania,1262.0,3275.0,2961.0,880.0,6672.0
+Northern Territory,Batchelor Institute of Indigenous Tertiary Education,0.0,0.0,0.0,22.0,9.0
+Northern Territory,Charles Darwin University,361.0,1369.0,487.0,786.0,2054.0
+Australian Capital Territory,The Australian National University,287.0,2627.0,2870.0,228.0,449.0
+Australian Capital Territory,University of Canberra,539.0,1447.0,1406.0,375.0,901.0
+Australian Capital Territory,Non-University Higher Education Institutions,45.0,0.0,17.0,43.0,290.0
+Multi-State,Australian Catholic University,802.0,2932.0,1134.0,612.0,3286.0
+Multi-State,Non-University Higher Education Institutions,0.0,130.0,0.0,9.0,342.0
