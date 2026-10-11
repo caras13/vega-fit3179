@@ -1,52 +1,44 @@
-State,Institution,Natural_Physical_Sciences,IT,Engineering,Architecture_Building,Agriculture_Environment,Health,Education,Management_Commerce,Society_Culture,Creative_Arts,Food_Hospitality,Mixed_Field,Non_Award,Total,Total_STEM
-State,Institution,0.0,0.0,0.0,Architecture and Building,0.0,Health,Education,Management and Commerce,Society and Culture,Creative Arts,"Food, Hospitality and Personal Services",Mixed Field Programmes,Non-award courses(3.04),Total(2.01),0.0
-New South Wales,Avondale University,0.0,0.0,0.0,0,0.0,318,316,62,497,34,0,0,np,997,0.0
-New South Wales,Charles Sturt University,1064.0,1605.0,174.0,0,1634.0,8245,7868,1401,9070,155,0,88,122,31423,4477.0
-New South Wales,Macquarie University,2967.0,3072.0,1574.0,223,489.0,2628,3452,8469,15245,1885,0,79,218,33783,8102.0
-New South Wales,Southern Cross University,533.0,158.0,451.0,0,156.0,3805,3436,1009,2195,524,70,661,69,12822,1298.0
-New South Wales,The University of New England,2095.0,637.0,0.0,421,1076.0,1193,3931,1742,6988,230,0,305,32,18252,3808.0
-New South Wales,The University of Newcastle,1747.0,757.0,2061.0,1191,645.0,8653,4182,2223,7352,954,0,0,108,29045,5210.0
-New South Wales,The University of Sydney,6751.0,1172.0,3605.0,1407,244.0,9870,1824,5268,9914,2232,0,0,65,38790,11772.0
-New South Wales,University of New South Wales(1.03),6211.0,6826.0,8463.0,1727,83.0,4245,1800,11581,9163,2429,0,0,249,43839,21583.0
-New South Wales,University of Technology Sydney,4166.0,3613.0,5296.0,2365,78.0,5170,779,9575,7146,4748,0,0,15,37218,13153.0
-New South Wales,University of Wollongong,1637.0,1103.0,1569.0,0,110.0,4041,2686,2667,4738,1277,0,147,56,18984,4419.0
-New South Wales,Western Sydney University,2728.0,1154.0,1684.0,3159,17.0,9298,2256,4596,10191,1502,0,212,143,36130,5583.0
-New South Wales,Non-University Higher Education Institutions,129.0,893.0,231.0,172,52.0,1726,898,18176,14880,8363,np,0,184,45677,1305.0
-Victoria,Deakin University,2736.0,2665.0,1132.0,646,776.0,9466,5872,7653,13994,1394,0,0,324,43255,7309.0
-Victoria,Federation University Australia,629.0,227.0,390.0,0,0.0,3239,1832,276,1441,138,0,309,< 5,8472,1246.0
-Victoria,La Trobe University,2177.0,1942.0,229.0,45,205.0,11498,3535,2610,6148,279,0,229,232,28329,4553.0
-Victoria,Monash University,9601.0,4135.0,5502.0,677,81.0,10932,2809,10655,13756,2192,0,0,282,50907,19319.0
-Victoria,RMIT University,2216.0,3767.0,6733.0,2998,301.0,3111,674,8818,5175,5338,0,0,33,37975,13017.0
-Victoria,Swinburne University of Technology,676.0,2215.0,2169.0,562,0.0,1507,8471,4998,6722,2998,0,0,56,29072,5060.0
-Victoria,The University of Melbourne,10438.0,604.0,1029.0,2128,971.0,6527,2411,5927,9770,2494,0,0,225,42524,13042.0
-Victoria,University of Divinity,0.0,0.0,0.0,0,0.0,0,0,0,1075,0,0,0,48,1123,0.0
-Victoria,Victoria University,522.0,510.0,300.0,792,140.0,5974,4485,1600,4527,151,0,186,58,18868,1472.0
-Victoria,Non-University Higher Education Institutions,155.0,248.0,146.0,168,276.0,1062,141,1149,2325,1948,< 5,0,< 5,7577,825.0
-Queensland,Bond University,196.0,0.0,0.0,159,0.0,1341,9,743,1054,167,0,np,75,3636,196.0
-Queensland,CQUniversity,317.0,386.0,1108.0,235,182.0,6518,2221,1097,2264,362,0,1474,509,16506,1993.0
-Queensland,Griffith University,2637.0,1722.0,1495.0,500,521.0,7699,3914,5682,10062,3192,0,64,416,35878,6375.0
-Queensland,James Cook University,1128.0,256.0,445.0,31,105.0,5447,1108,633,2052,11,0,681,404,12095,1934.0
-Queensland,Queensland University of Technology,3046.0,4724.0,4879.0,1989,0.0,6254,4556,9743,7988,5568,0,0,365,42808,12649.0
-Queensland,The University of Queensland,6056.0,2017.0,4889.0,635,884.0,8396,1534,5315,8888,994,0,90,50,34827,13846.0
-Queensland,University of Southern Queensland,1133.0,525.0,2808.0,59,149.0,3463,3306,1252,3347,1880,0,294,473,18504,4615.0
-Queensland,University of the Sunshine Coast,1284.0,518.0,585.0,67,598.0,5113,1712,1408,3470,935,0,1177,732,16609,2985.0
-Queensland,Non-University Higher Education Institutions,54.0,33.0,122.0,0,0.0,3661,465,123,1948,147,0,0,0,6540,209.0
-Western Australia,Curtin University,3609.0,885.0,3740.0,2179,143.0,8437,6978,5416,8239,1841,0,0,49,39902,8377.0
-Western Australia,Edith Cowan University,635.0,1263.0,687.0,0,75.0,5918,5452,1958,4261,1289,0,< 5,60,21343,2660.0
-Western Australia,Murdoch University,1803.0,480.0,230.0,0,708.0,2036,1475,777,2640,479,0,506,23,10546,3221.0
-Western Australia,The University of Notre Dame Australia(1.09),334.0,0.0,0.0,49,0.0,4664,2884,773,2294,27,0,282,33,10944,334.0
-Western Australia,The University of Western Australia,5755.0,287.0,2422.0,461,333.0,2567,288,3415,4986,200,0,37,27,19624,8797.0
-Western Australia,Non-University Higher Education Institutions,0.0,44.0,479.0,np,0.0,215,0,70,58,21,0,0,0,916,523.0
-South Australia,Flinders University,1768.0,530.0,936.0,0,87.0,6938,1805,894,4077,1191,0,529,410,18629,3321.0
-South Australia,The University of Adelaide,2521.0,1248.0,2317.0,339,662.0,5121,633,2288,5654,883,0,0,175,20348,6748.0
-South Australia,Torrens University Australia,0.0,1228.0,7.0,1354,0.0,4019,211,3626,1184,2434,53,0,0,14116,1235.0
-South Australia,University of South Australia,628.0,1496.0,1369.0,1845,119.0,8422,3197,4420,4205,1506,0,632,158,27675,3612.0
-South Australia,Private Universities (Table C) and Non-University Higher Education Institutions,0.0,41.0,79.0,0,0.0,179,205,2389,1087,303,0,0,0,4283,120.0
-Tasmania,University of Tasmania,1702.0,424.0,830.0,212,1649.0,12256,2554,1170,4476,993,0,1099,44,26909,4605.0
-Northern Territory,Batchelor Institute of Indigenous Tertiary Education,0.0,0.0,0.0,0,0.0,0,0,0,23,0,0,0,0,23,0.0
-Northern Territory,Charles Darwin University,175.0,122.0,442.0,< 5,209.0,3452,1524,229,1790,14,0,1050,23,9013,948.0
-Australian Capital Territory,The Australian National University,2725.0,748.0,912.0,0,449.0,760,0,1922,8278,543,0,0,46,14120,4834.0
-Australian Capital Territory,University of Canberra,429.0,980.0,218.0,540,122.0,2924,1642,1211,4434,1236,0,0,10,13102,1749.0
-Australian Capital Territory,Non-University Higher Education Institutions,0.0,85.0,0.0,0,0.0,1184,0,0,0,0,0,0,0,1270,85.0
-Multi-State,Australian Catholic University,388.0,95.0,0.0,0,0.0,13152,9804,1470,5313,285,0,0,975,29220,483.0
-Multi-State,Non-University Higher Education Institutions,0.0,0.0,0.0,0,0.0,0,0,0,2304,0,0,0,37,2341,0.0
+State,Institution,Natural_Physical_Sciences,IT,Engineering,Architecture_Building,Agriculture_Environment,Health,Education,Management_Commerce,Society_Culture,Creative_Arts,Food_Hospitality,Mixed_Field,Non_Award,Total,Total_STEM,Latitude,Longitude
+New South Wales,Avondale University,0.0,0.0,0.0,0,0.0,318,316,62,497,34,0,0,np,997.0,0.0,-33.1182,151.4651
+New South Wales,Charles Sturt University,1064.0,1605.0,174.0,0,1634.0,8245,7868,1401,9070,155,0,88,122,31423.0,4477.0,-33.4318,149.5606
+New South Wales,Macquarie University,2967.0,3072.0,1574.0,223,489.0,2628,3452,8469,15245,1885,0,79,218,33783.0,8102.0,-33.7738,151.1126
+New South Wales,Southern Cross University,533.0,158.0,451.0,0,156.0,3805,3436,1009,2195,524,70,661,69,12822.0,1298.0,-28.8188,153.3031
+New South Wales,The University of New England,2095.0,637.0,0.0,421,1076.0,1193,3931,1742,6988,230,0,305,32,18252.0,3808.0,-30.4852,151.6429
+New South Wales,The University of Newcastle,1747.0,757.0,2061.0,1191,645.0,8653,4182,2223,7352,954,0,0,108,29045.0,5210.0,-32.8931,151.7042
+New South Wales,The University of Sydney,6751.0,1172.0,3605.0,1407,244.0,9870,1824,5268,9914,2232,0,0,65,38790.0,11772.0,-33.8886,151.1873
+New South Wales,University of New South Wales(1.03),6211.0,6826.0,8463.0,1727,83.0,4245,1800,11581,9163,2429,0,0,249,43839.0,21583.0,-33.9173,151.2313
+New South Wales,University of Technology Sydney,4166.0,3613.0,5296.0,2365,78.0,5170,779,9575,7146,4748,0,0,15,37218.0,13153.0,-33.8837,151.2007
+New South Wales,University of Wollongong,1637.0,1103.0,1569.0,0,110.0,4041,2686,2667,4738,1277,0,147,56,18984.0,4419.0,-34.4053,150.8784
+New South Wales,Western Sydney University,2728.0,1154.0,1684.0,3159,17.0,9298,2256,4596,10191,1502,0,212,143,36130.0,5583.0,-33.7547,150.738
+Victoria,Deakin University,2736.0,2665.0,1132.0,646,776.0,9466,5872,7653,13994,1394,0,0,324,43255.0,7309.0,-38.1969,144.3015
+Victoria,Federation University Australia,629.0,227.0,390.0,0,0.0,3239,1832,276,1441,138,0,309,< 5,8472.0,1246.0,-37.6256,143.8906
+Victoria,La Trobe University,2177.0,1942.0,229.0,45,205.0,11498,3535,2610,6148,279,0,229,232,28329.0,4553.0,-37.7214,145.0483
+Victoria,Monash University,9601.0,4135.0,5502.0,677,81.0,10932,2809,10655,13756,2192,0,0,282,50907.0,19319.0,-37.9105,145.1362
+Victoria,RMIT University,2216.0,3767.0,6733.0,2998,301.0,3111,674,8818,5175,5338,0,0,33,37975.0,13017.0,-37.808,144.9631
+Victoria,Swinburne University of Technology,676.0,2215.0,2169.0,562,0.0,1507,8471,4998,6722,2998,0,0,56,29072.0,5060.0,-37.8221,145.0389
+Victoria,The University of Melbourne,10438.0,604.0,1029.0,2128,971.0,6527,2411,5927,9770,2494,0,0,225,42524.0,13042.0,-37.7982,144.9605
+Victoria,University of Divinity,0.0,0.0,0.0,0,0.0,0,0,0,1075,0,0,0,48,1123.0,0.0,-37.8236,144.9822
+Victoria,Victoria University,522.0,510.0,300.0,792,140.0,5974,4485,1600,4527,151,0,186,58,18868.0,1472.0,-37.7925,144.8927
+Queensland,Bond University,196.0,0.0,0.0,159,0.0,1341,9,743,1054,167,0,np,75,3636.0,196.0,-28.0736,153.4163
+Queensland,CQUniversity,317.0,386.0,1108.0,235,182.0,6518,2221,1097,2264,362,0,1474,509,16506.0,1993.0,-23.3255,150.5188
+Queensland,Griffith University,2637.0,1722.0,1495.0,500,521.0,7699,3914,5682,10062,3192,0,64,416,35878.0,6375.0,-27.5534,153.0526
+Queensland,James Cook University,1128.0,256.0,445.0,31,105.0,5447,1108,633,2052,11,0,681,404,12095.0,1934.0,-19.3278,146.7578
+Queensland,Queensland University of Technology,3046.0,4724.0,4879.0,1989,0.0,6254,4556,9743,7988,5568,0,0,365,42808.0,12649.0,-27.4782,153.0283
+Queensland,The University of Queensland,6056.0,2017.0,4889.0,635,884.0,8396,1534,5315,8888,994,0,90,50,34827.0,13846.0,-27.4975,153.0137
+Queensland,University of Southern Queensland,1133.0,525.0,2808.0,59,149.0,3463,3306,1252,3347,1880,0,294,473,18504.0,4615.0,-27.6041,151.9325
+Queensland,University of the Sunshine Coast,1284.0,518.0,585.0,67,598.0,5113,1712,1408,3470,935,0,1177,732,16609.0,2985.0,-26.7176,153.0629
+Western Australia,Curtin University,3609.0,885.0,3740.0,2179,143.0,8437,6978,5416,8239,1841,0,0,49,39902.0,8377.0,-32.0038,115.8948
+Western Australia,Edith Cowan University,635.0,1263.0,687.0,0,75.0,5918,5452,1958,4261,1289,0,< 5,60,21343.0,2660.0,-31.7512,115.7681
+Western Australia,Murdoch University,1803.0,480.0,230.0,0,708.0,2036,1475,777,2640,479,0,506,23,10546.0,3221.0,-32.0673,115.836
+Western Australia,The University of Notre Dame Australia(1.09),334.0,0.0,0.0,49,0.0,4664,2884,773,2294,27,0,282,33,10944.0,334.0,-32.0569,115.7441
+Western Australia,The University of Western Australia,5755.0,287.0,2422.0,461,333.0,2567,288,3415,4986,200,0,37,27,19624.0,8797.0,-31.9807,115.8172
+South Australia,Flinders University,1768.0,530.0,936.0,0,87.0,6938,1805,894,4077,1191,0,529,410,18629.0,3321.0,-35.0426,138.5731
+South Australia,The University of Adelaide,2521.0,1248.0,2317.0,339,662.0,5121,633,2288,5654,883,0,0,175,20348.0,6748.0,-34.9206,138.6062
+South Australia,Torrens University Australia,0.0,1228.0,7.0,1354,0.0,4019,211,3626,1184,2434,53,0,0,14116.0,1235.0,-34.9275,138.6053
+South Australia,University of South Australia,628.0,1496.0,1369.0,1845,119.0,8422,3197,4420,4205,1506,0,632,158,27675.0,3612.0,-34.9222,138.5947
+Tasmania,University of Tasmania,1702.0,424.0,830.0,212,1649.0,12256,2554,1170,4476,993,0,1099,44,26909.0,4605.0,-42.9038,147.3245
+Northern Territory,Batchelor Institute of Indigenous Tertiary Education,0.0,0.0,0.0,0,0.0,0,0,0,23,0,0,0,0,23.0,0.0,-13.0525,131.0205
+Northern Territory,Charles Darwin University,175.0,122.0,442.0,< 5,209.0,3452,1524,229,1790,14,0,1050,23,9013.0,948.0,-12.3718,130.8688
+Australian Capital Territory,The Australian National University,2725.0,748.0,912.0,0,449.0,760,0,1922,8278,543,0,0,46,14120.0,4834.0,-35.2777,149.1185
+Australian Capital Territory,University of Canberra,429.0,980.0,218.0,540,122.0,2924,1642,1211,4434,1236,0,0,10,13102.0,1749.0,-35.2382,149.0838
+Multi-State,Australian Catholic University,388.0,95.0,0.0,0,0.0,13152,9804,1470,5313,285,0,0,975,29220.0,483.0,-37.8085,144.9801

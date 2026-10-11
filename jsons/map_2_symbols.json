@@ -3,32 +3,83 @@
   "title": "University STEM Enrolments across Australian Campuses (2024)",
   "width": 700,
   "height": 450,
-  "projection": {"type": "equirectangular"},
+  "projection": {
+    "type": "equirectangular"
+  },
   "layer": [
     {
       "data": {
-        "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-states.json",
-        "format": {"type": "geojson"}
+        "url": "data/australia_states.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
       },
-      "mark": {"type": "geoshape", "fill": "#e0e0e0", "stroke": "white"}
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e9ecef",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.2
+      }
     },
     {
-      "data": {"url": "data/university_stem_enrolments_2024.csv"},
-      "mark": {"type": "circle", "tooltip": true},
+      "data": {
+        "url": "data/university_stem_2024.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.Total_STEM > 0"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "opacity": 0.75,
+        "stroke": "#333333",
+        "strokeWidth": 0.5
+      },
       "encoding": {
-        "longitude": {"field": "Longitude", "type": "quantitative"},
-        "latitude": {"field": "Latitude", "type": "quantitative"},
+        "longitude": {
+          "field": "Longitude",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "Latitude",
+          "type": "quantitative"
+        },
         "size": {
           "field": "Total_STEM",
           "type": "quantitative",
           "title": "Total STEM Enrolments",
-          "scale": {"range": [50, 1000]}
+          "scale": {
+            "range": [30, 800]
+          }
         },
         "color": {
           "field": "State",
           "type": "nominal",
-          "scale": {"scheme": "category10"}
-        }
+          "title": "State / Territory",
+          "scale": {
+            "scheme": "category10"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "Institution",
+            "type": "nominal",
+            "title": "University"
+          },
+          {
+            "field": "State",
+            "type": "nominal",
+            "title": "State"
+          },
+          {
+            "field": "Total_STEM",
+            "type": "quantitative",
+            "title": "Total STEM Enrolments",
+            "format": ","
+          }
+        ]
       }
     }
   ]

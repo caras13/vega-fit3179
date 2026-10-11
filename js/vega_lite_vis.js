@@ -9,7 +9,13 @@ vegaEmbed('#map_1', spec1, { "actions": false }).then(function(result) {
 }).catch(function(error) {
   console.error(error);
 });
+var spec2 = "jsons/map_2_symbols.json";
 
+vegaEmbed('#map_2', spec2, { "actions": false }).then(function(result) {
+  console.log("Chart 2 loaded successfully");
+}).catch(function(error) {
+  console.error(error);
+});
 // vegaEmbed('#vis1', 'jsons/map_1_choropleth.json');
 // vegaEmbed('#vis2', 'jsons/chart_1_dumbbell.json');
 // vegaEmbed('#vis3', 'jsons/map_2_symbols.json');

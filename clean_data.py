@@ -4,6 +4,55 @@ import os
 # Define data folder path
 DATA_DIR = 'data'
 
+# Coordinate lookup dictionary for Australian Higher Education Institutions (Latitude, Longitude)
+CAMPUS_COORDINATES = {
+    'Avondale University': (-33.1182, 151.4651),
+    'Charles Sturt University': (-33.4318, 149.5606),
+    'Macquarie University': (-33.7738, 151.1126),
+    'Southern Cross University': (-28.8188, 153.3031),
+    'The University of New England': (-30.4852, 151.6429),
+    'The University of Newcastle': (-32.8931, 151.7042),
+    'The University of Sydney': (-33.8886, 151.1873),
+    'University of New South Wales(1.03)': (-33.9173, 151.2313),
+    'University of New South Wales': (-33.9173, 151.2313),
+    'University of Technology Sydney': (-33.8837, 151.2007),
+    'University of Wollongong': (-34.4053, 150.8784),
+    'Western Sydney University': (-33.7547, 150.7380),
+    'Deakin University': (-38.1969, 144.3015),
+    'Federation University Australia': (-37.6256, 143.8906),
+    'La Trobe University': (-37.7214, 145.0483),
+    'Monash University': (-37.9105, 145.1362),
+    'RMIT University': (-37.8080, 144.9631),
+    'Swinburne University of Technology': (-37.8221, 145.0389),
+    'The University of Melbourne': (-37.7982, 144.9605),
+    'University of Divinity': (-37.8236, 144.9822),
+    'Victoria University': (-37.7925, 144.8927),
+    'Bond University': (-28.0736, 153.4163),
+    'CQUniversity': (-23.3255, 150.5188),
+    'Griffith University': (-27.5534, 153.0526),
+    'James Cook University': (-19.3278, 146.7578),
+    'Queensland University of Technology': (-27.4782, 153.0283),
+    'The University of Queensland': (-27.4975, 153.0137),
+    'University of Southern Queensland': (-27.6041, 151.9325),
+    'University of the Sunshine Coast': (-26.7176, 153.0629),
+    'Curtin University': (-32.0038, 115.8948),
+    'Edith Cowan University': (-31.7512, 115.7681),
+    'Murdoch University': (-32.0673, 115.8360),
+    'The University of Notre Dame Australia(1.09)': (-32.0569, 115.7441),
+    'The University of Notre Dame Australia': (-32.0569, 115.7441),
+    'The University of Western Australia': (-31.9807, 115.8172),
+    'Flinders University': (-35.0426, 138.5731),
+    'The University of Adelaide': (-34.9206, 138.6062),
+    'Torrens University Australia': (-34.9275, 138.6053),
+    'University of South Australia': (-34.9222, 138.5947),
+    'University of Tasmania': (-42.9038, 147.3245),
+    'Batchelor Institute of Indigenous Tertiary Education': (-13.0525, 131.0205),
+    'Charles Darwin University': (-12.3718, 130.8688),
+    'The Australian National University': (-35.2777, 149.1185),
+    'University of Canberra': (-35.2382, 149.0838),
+    'Australian Catholic University': (-37.8085, 144.9801)
+}
+
 print("Starting data cleaning process...")
 
 # 1. Clean Section 2: University STEM Enrolments 2024
@@ -21,12 +70,18 @@ if os.path.exists(sec2_path):
     stem_cols = ['Natural_Physical_Sciences', 'IT', 'Engineering', 'Agriculture_Environment']
     for col in stem_cols:
         df_sec2[col] = pd.to_numeric(df_sec2[col].replace(['np', ' ', ''], 0), errors='coerce').fillna(0)
+    
+    df_sec2['Total'] = pd.to_numeric(df_sec2['Total'].replace(['np', ' ', ''], 0), errors='coerce').fillna(0)
 
     # Compute Total STEM Enrolments
     df_sec2['Total_STEM'] = df_sec2[stem_cols].sum(axis=1)
     
-    # Drop header metadata rows
-    df_sec2_clean = df_sec2.dropna(subset=['State', 'Institution'])
+    # Keep valid university records mapped in CAMPUS_COORDINATES
+    df_sec2_clean = df_sec2[df_sec2['Institution'].isin(CAMPUS_COORDINATES.keys())].copy()
+    
+    # Assign Latitude and Longitude columns
+    df_sec2_clean['Latitude'] = df_sec2_clean['Institution'].map(lambda x: CAMPUS_COORDINATES[x][0])
+    df_sec2_clean['Longitude'] = df_sec2_clean['Institution'].map(lambda x: CAMPUS_COORDINATES[x][1])
     
     output_path = os.path.join(DATA_DIR, 'university_stem_2024.csv')
     df_sec2_clean.to_csv(output_path, index=False)
