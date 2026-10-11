@@ -1,0 +1,85 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Gender Share Disparity across Higher Education Fields of Study (2024)",
+    "subtitle": "Percentage breakdown of enrolled domestic students by gender within each discipline",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 600,
+  "height": 300,
+  "data": {
+    "url": "data/field_gender_matrix.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "rect",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "x": {
+          "field": "Field",
+          "type": "nominal",
+          "title": "Field of Study",
+          "axis": {
+            "labelAngle": -35,
+            "labelFontSize": 11,
+            "titleFontSize": 13,
+            "titlePadding": 10
+          }
+        },
+        "y": {
+          "field": "Gender",
+          "type": "nominal",
+          "title": "Gender",
+          "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 13
+          }
+        },
+        "color": {
+          "field": "Gender_Share_Pct",
+          "type": "quantitative",
+          "title": "Share (%)",
+          "scale": {
+            "scheme": "tealblues"
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+        "tooltip": [
+          {"field": "Field", "type": "nominal", "title": "Field"},
+          {"field": "Gender", "type": "nominal", "title": "Gender"},
+          {"field": "Gender_Share_Pct", "type": "quantitative", "title": "Gender Share (%)", "format": ".1f"},
+          {"field": "Enrolments", "type": "quantitative", "title": "Total Enrolments", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "baseline": "middle",
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "x": {"field": "Field", "type": "nominal"},
+        "y": {"field": "Gender", "type": "nominal"},
+        "text": {"field": "Gender_Share_Pct", "type": "quantitative", "format": ".1f"},
+        "color": {
+          "condition": {
+            "test": "datum.Gender_Share_Pct > 60",
+            "value": "#ffffff"
+          },
+          "value": "#1f2937"
+        }
+      }
+    }
+  ]
+}

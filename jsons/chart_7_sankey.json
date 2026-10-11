@@ -1,0 +1,68 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Student Academic Pathways: School Background → Degree Level → STEM Field",
+    "subtitle": "Flow distribution of students entering tertiary STEM education",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 220,
+  "height": 360,
+  "data": {
+    "url": "data/pathways_sankey.csv"
+  },
+  "mark": {
+    "type": "bar",
+    "cornerRadius": 2
+  },
+  "encoding": {
+    "x": {
+      "field": "University_Level",
+      "type": "nominal",
+      "title": "Tertiary Qualification Level",
+      "axis": {
+        "labelFontSize": 12,
+        "titleFontSize": 13
+      }
+    },
+    "y": {
+      "field": "Students",
+      "type": "quantitative",
+      "aggregate": "sum",
+      "title": "Total Student Volume",
+      "axis": {
+        "labelFontSize": 11,
+        "titleFontSize": 13
+      }
+    },
+    "color": {
+      "field": "STEM_Discipline",
+      "type": "nominal",
+      "title": "STEM Discipline",
+      "scale": {
+        "scheme": "category10"
+      },
+      "legend": {
+        "orient": "right",
+        "titleFontSize": 12,
+        "labelFontSize": 11
+      }
+    },
+    "column": {
+      "field": "High_School_Type",
+      "type": "nominal",
+      "title": "High School Origin Group",
+      "header": {
+        "titleFontSize": 14,
+        "labelFontSize": 12
+      }
+    },
+    "tooltip": [
+      {"field": "High_School_Type", "type": "nominal", "title": "School Origin"},
+      {"field": "University_Level", "type": "nominal", "title": "Degree Level"},
+      {"field": "STEM_Discipline", "type": "nominal", "title": "Discipline"},
+      {"field": "Students", "type": "quantitative", "title": "Student Count", "format": ","}
+    ]
+  }
+}

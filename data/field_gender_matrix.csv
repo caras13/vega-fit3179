@@ -1,0 +1,17 @@
+Field,Gender,Enrolments,Gender_Share_Pct
+Natural & Physical Sciences,Female,48200,48.2
+Natural & Physical Sciences,Male,51800,51.8
+Information Technology,Female,14500,21.5
+Information Technology,Male,52900,78.5
+Engineering & Related Tech,Female,12100,18.2
+Engineering & Related Tech,Male,54400,81.8
+Architecture & Building,Female,16800,39.5
+Architecture & Building,Male,25700,60.5
+Agriculture & Environment,Female,8400,51.2
+Agriculture & Environment,Male,8000,48.8
+Health & Medicine,Female,112400,73.5
+Health & Medicine,Male,40500,26.5
+Education,Female,48900,71.2
+Education,Male,19800,28.8
+Management & Commerce,Female,78400,47.8
+Management & Commerce,Male,85600,52.2

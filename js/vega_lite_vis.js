@@ -22,3 +22,13 @@ vegaEmbed('#map_2', 'jsons/map_2_symbols.json', { "actions": false })
 vegaEmbed('#chart_5', 'jsons/chart_5_dumbbell.json', { "actions": false })
   .then(() => console.log("Chart 5 loaded"))
   .catch(console.error);
+
+// Chart 6: Field vs Gender Heatmap
+vegaEmbed('#chart_6', 'jsons/chart_6_heatmap.json', { "actions": false })
+  .then(() => console.log("Chart 6 loaded"))
+  .catch(console.error);
+
+// Chart 7: Pathways Flow Chart
+vegaEmbed('#chart_7', 'jsons/chart_7_sankey.json', { "actions": false })
+  .then(() => console.log("Chart 7 loaded"))
+  .catch(console.error);
