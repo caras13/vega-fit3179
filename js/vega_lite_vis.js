@@ -1,29 +1,24 @@
-// var vis1 = "jsons/map_1_choropleth.json";
-// vegaEmbed('#vis1', vis1).then(function(result) {
-//   // Access the Vega view instance (e.g. result.view) if needed
-// }).catch(console.error);
-var spec1 = "jsons/map_1_choropleth.json";
+// Chart 1: State Choropleth Map
+vegaEmbed('#map_1', 'jsons/map_1_choropleth.json', { "actions": false })
+  .then(() => console.log("Chart 1 loaded"))
+  .catch(console.error);
 
-vegaEmbed('#map_1', spec1, { "actions": false }).then(function(result) {
-  console.log("Chart 1 loaded successfully");
-}).catch(function(error) {
-  console.error(error);
-});
+// Chart 2: Metro vs Regional Dumbbell
+vegaEmbed('#vis_dumbbell', 'jsons/chart_2_dumbbell.json', { "actions": false })
+  .then(() => console.log("Chart 2 loaded"))
+  .catch(console.error);
 
-var spec2 = "jsons/map_2_symbols.json";
+// Chart 3: NAPLAN Grouped Bar
+vegaEmbed('#chart_3', 'jsons/chart_3_grouped_bar.json', { "actions": false })
+  .then(() => console.log("Chart 3 loaded"))
+  .catch(console.error);
 
-vegaEmbed('#map_2', spec2, { "actions": false }).then(function(result) {
-  console.log("Chart 2 loaded successfully");
-}).catch(function(error) {
-  console.error(error);
-});
+// Chart 4: University Proportional Symbol Map
+vegaEmbed('#map_2', 'jsons/map_2_symbols.json', { "actions": false })
+  .then(() => console.log("Chart 4 loaded"))
+  .catch(console.error);
 
-var specDumbbell = "jsons/chart_2_dumbbell.json";
-
-vegaEmbed('#vis_dumbbell', specDumbbell, { "actions": false }).then(function(result) {
-  console.log("Chart 2 Dumbbell Plot loaded successfully");
-}).catch(console.error);
-// vegaEmbed('#vis1', 'jsons/map_1_choropleth.json');
-// vegaEmbed('#vis2', 'jsons/chart_1_dumbbell.json');
-// vegaEmbed('#vis3', 'jsons/map_2_symbols.json');
-// ... embed all 11+ charts
+// Chart 5: Low SES vs High SES Dumbbell
+vegaEmbed('#chart_5', 'jsons/chart_5_dumbbell.json', { "actions": false })
+  .then(() => console.log("Chart 5 loaded"))
+  .catch(console.error);

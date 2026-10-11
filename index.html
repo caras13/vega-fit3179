@@ -6,11 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FIT3179 DV2 - STEM Education in Australia</title>
 
-  <!-- Pure.css for Responsive Layout -->
+  <!-- Pure.css Grid System -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
   <link rel="stylesheet" href="styles.css">
 
-  <!-- Vega, Vega-Lite & Vega-Embed Libraries -->
+  <!-- Vega Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -18,29 +18,91 @@
 
 <body>
 
-  <div class="pure-g" id="main-container">
-    <div class="pure-u-1">
+  <div id="main-container">
+    
+    <!-- Dashboard Header -->
+    <header class="header-card">
       <h1>STEM Education in Australia: Pathways & Equity</h1>
-    </div>
+      <p class="subtitle">An analytical exploration of secondary foundations, tertiary enrolment patterns, and regional equity disparities across Australia.</p>
+    </header>
+
     <!-- SECTION 1: School Level & Regional STEM Foundation -->
     <section class="section-container">
       <h2>Section 1: School Level & Regional STEM Foundation</h2>
-      <div class="pure-g">
-        <div class="pure-u-1">
-          <div id="map_1" class="vis-container"></div>
+      
+      <!-- Chart 1 Card -->
+      <div class="card">
+        <div class="pure-g">
+          <div class="pure-u-1 pure-u-md-1-3 narrative">
+            <h3>State & Territory Participation</h3>
+            <p>Senior secondary STEM engagement varies noticeably across state jurisdictions. While eastern states like Queensland and New South Wales maintain STEM participation above <strong>23%</strong>, regional territories like the Northern Territory lag at <strong>10.5%</strong> due to resource constraints and distance challenges.</p>
+          </div>
+          <div class="pure-u-1 pure-u-md-2-3">
+            <div id="map_1" class="vis-container"></div>
+          </div>
         </div>
       </div>
-    </section><br>
-    <div id="vis_dumbbell"></div>
 
-    <section class="section-container">
-      <h2>Section 2: University-Level STEM Enrolments</h2>
-      <div class="pure-g">
-        <div class="pure-u-2">
-          <div id="map_2" class="vis-container"></div>
+      <!-- Chart 2 Card -->
+      <div class="card">
+        <div class="pure-g">
+          <div class="pure-u-1 pure-u-md-1-3 narrative">
+            <h3>Metropolitan vs Regional Gap</h3>
+            <p>Significant gaps persist in subject selection between metropolitan and regional secondary students. Advanced Mathematics and Physics show participation differences exceeding <strong>10 percentage points</strong>, highlighting rural barriers to specialized STEM teaching.</p>
+          </div>
+          <div class="pure-u-1 pure-u-md-2-3">
+            <div id="vis_dumbbell" class="vis-container"></div>
+          </div>
         </div>
       </div>
+
+      <!-- Chart 3 Card -->
+      <div class="card">
+        <div class="pure-g">
+          <div class="pure-u-1 pure-u-md-1-3 narrative">
+            <h3>NAPLAN Numeracy Proficiency</h3>
+            <p>Early foundational gaps in numeracy broaden continuously from Year 3 to Year 9. Students in Remote & Very Remote schools exhibit proficiency rates below <strong>20% by Year 9</strong>, compared to over <strong>65%</strong> in Major Cities.</p>
+          </div>
+          <div class="pure-u-1 pure-u-md-2-3">
+            <div id="chart_3" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+
     </section>
+
+    <!-- SECTION 2: Higher Education University Enrolments & Equity Gaps -->
+    <section class="section-container">
+      <h2>Section 2: Higher Education University Enrolments & Equity Gaps</h2>
+
+      <!-- Chart 4 Card -->
+      <div class="card">
+        <div class="pure-g">
+          <div class="pure-u-1 pure-u-md-1-3 narrative">
+            <h3>Campus Enrolment Distribution</h3>
+            <p>University-level STEM enrolments are heavily clustered around major metropolitan capital campuses, with UNSW Sydney, Monash University, and The University of Sydney hosting the largest cohorts exceeding <strong>15,000 STEM students each</strong>.</p>
+          </div>
+          <div class="pure-u-1 pure-u-md-2-3">
+            <div id="map_2" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chart 5 Card -->
+      <div class="card">
+        <div class="pure-g">
+          <div class="pure-u-1 pure-u-md-1-3 narrative">
+            <h3>Low SES vs High SES Participation</h3>
+            <p>High SES students dominate university STEM discipline shares (up to <strong>44.6%</strong> in Architecture & Engineering), whereas Low SES participation remains suppressed between <strong>13.5% and 16.2%</strong> across technical STEM fields.</p>
+          </div>
+          <div class="pure-u-1 pure-u-md-2-3">
+            <div id="chart_5" class="vis-container"></div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
   </div>
 
   <script src="js/vega_lite_vis.js"></script>

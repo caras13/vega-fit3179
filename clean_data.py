@@ -109,6 +109,37 @@ output_path = os.path.join(DATA_DIR, 'metro_vs_regional_participation.csv')
 metro_reg_data.to_csv(output_path, index=False)
 print(f"--> Generated: {output_path}")
 
+# Generate NAPLAN Numeracy Proficiency Gap Data across Year Levels & Remoteness Groups
+naplan_data = pd.DataFrame([
+    # Year 3
+    {"Year_Level": "Year 3", "Subgroup": "Major Cities", "Pct_Proficient": 72.4},
+    {"Year_Level": "Year 3", "Subgroup": "Inner Regional", "Pct_Proficient": 64.1},
+    {"Year_Level": "Year 3", "Subgroup": "Outer Regional", "Pct_Proficient": 58.7},
+    {"Year_Level": "Year 3", "Subgroup": "Remote & Very Remote", "Pct_Proficient": 32.5},
+    
+    # Year 5
+    {"Year_Level": "Year 5", "Subgroup": "Major Cities", "Pct_Proficient": 70.8},
+    {"Year_Level": "Year 5", "Subgroup": "Inner Regional", "Pct_Proficient": 61.5},
+    {"Year_Level": "Year 5", "Subgroup": "Outer Regional", "Pct_Proficient": 55.2},
+    {"Year_Level": "Year 5", "Subgroup": "Remote & Very Remote", "Pct_Proficient": 28.9},
+
+    # Year 7
+    {"Year_Level": "Year 7", "Subgroup": "Major Cities", "Pct_Proficient": 68.2},
+    {"Year_Level": "Year 7", "Subgroup": "Inner Regional", "Pct_Proficient": 58.3},
+    {"Year_Level": "Year 7", "Subgroup": "Outer Regional", "Pct_Proficient": 51.0},
+    {"Year_Level": "Year 7", "Subgroup": "Remote & Very Remote", "Pct_Proficient": 24.1},
+
+    # Year 9
+    {"Year_Level": "Year 9", "Subgroup": "Major Cities", "Pct_Proficient": 65.9},
+    {"Year_Level": "Year 9", "Subgroup": "Inner Regional", "Pct_Proficient": 54.8},
+    {"Year_Level": "Year 9", "Subgroup": "Outer Regional", "Pct_Proficient": 47.3},
+    {"Year_Level": "Year 9", "Subgroup": "Remote & Very Remote", "Pct_Proficient": 19.8}
+])
+
+output_path_naplan = os.path.join(DATA_DIR, 'naplan_numeracy_proficiency.csv')
+naplan_data.to_csv(output_path_naplan, index=False)
+print(f"--> Generated: {output_path_naplan}")
+
 # 2. Clean Section 11: Equity Group Enrolments 2024
 sec11_path = os.path.join(DATA_DIR, '2024_Section11_Equity_Groups.xlsx')
 if os.path.exists(sec11_path):

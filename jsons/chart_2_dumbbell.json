@@ -7,7 +7,7 @@
     "subtitleFontSize": 12,
     "anchor": "start"
   },
-  "width": 650,
+  "width": 620,
   "height": 380,
   "data": {
     "url": "data/metro_vs_regional_participation.csv"
@@ -24,9 +24,17 @@
           "field": "Subject",
           "type": "nominal",
           "title": "STEM Subject",
-          "sort": ["Advanced Mathematics", "Physics", "Chemistry", "Information Technology", "Biology", "Earth & Environmental Science", "Essential Mathematics"],
+          "sort": [
+            "Advanced Mathematics",
+            "Physics",
+            "Chemistry",
+            "Information Technology",
+            "Biology",
+            "Earth & Environmental Science",
+            "Essential Mathematics"
+          ],
           "axis": {
-            "labelFontSize": 12,
+            "labelFontSize": 11,
             "titleFontSize": 13,
             "titlePadding": 10
           }
@@ -54,7 +62,15 @@
         "y": {
           "field": "Subject",
           "type": "nominal",
-          "sort": ["Advanced Mathematics", "Physics", "Chemistry", "Information Technology", "Biology", "Earth & Environmental Science", "Essential Mathematics"]
+          "sort": [
+            "Advanced Mathematics",
+            "Physics",
+            "Chemistry",
+            "Information Technology",
+            "Biology",
+            "Earth & Environmental Science",
+            "Essential Mathematics"
+          ]
         },
         "x": {
           "field": "Participation_Rate",
@@ -77,7 +93,7 @@
             "range": ["#0077b6", "#e63946"]
           },
           "legend": {
-            "orient": "top-right",
+            "orient": "right",
             "titleFontSize": 12,
             "labelFontSize": 11
           }

@@ -1,0 +1,139 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+        "text": "Higher Education Student Share: Low SES vs High SES by Field of Study (2024)",
+        "subtitle": "Comparing percentage share of total domestic enrolments by socioeconomic status (SEIFA)",
+        "fontSize": 16,
+        "subtitleFontSize": 12,
+        "anchor": "start"
+    },
+    "width": 620,
+    "height": 380,
+    "data": {
+        "url": "data/low_vs_high_ses_enrolments.csv"
+    },
+    "transform": [
+        {
+            "fold": [
+                "Low_SES_Share",
+                "High_SES_Share"
+            ],
+            "as": [
+                "SES_Group",
+                "Share_Pct"
+            ]
+        },
+        {
+            "calculate": "datum.SES_Group == 'Low_SES_Share' ? 'Low SES' : 'High SES'",
+            "as": "SES_Label"
+        }
+    ],
+    "layer": [
+        {
+            "mark": {
+                "type": "rule",
+                "color": "#ced4da",
+                "strokeWidth": 2.5
+            },
+            "encoding": {
+                "y": {
+                    "field": "Discipline",
+                    "type": "nominal",
+                    "title": "Field of Study",
+                    "sort": {
+                        "field": "Share_Pct",
+                        "op": "max",
+                        "order": "descending"
+                    },
+                    "axis": {
+                        "labelFontSize": 11,
+                        "titleFontSize": 13,
+                        "titlePadding": 10
+                    }
+                },
+                "x": {
+                    "field": "Share_Pct",
+                    "type": "quantitative",
+                    "aggregate": "min"
+                },
+                "x2": {
+                    "field": "Share_Pct",
+                    "type": "quantitative",
+                    "aggregate": "max"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "point",
+                "size": 140,
+                "filled": true,
+                "opacity": 1
+            },
+            "encoding": {
+                "y": {
+                    "field": "Discipline",
+                    "type": "nominal",
+                    "sort": {
+                        "field": "Share_Pct",
+                        "op": "max",
+                        "order": "descending"
+                    }
+                },
+                "x": {
+                    "field": "Share_Pct",
+                    "type": "quantitative",
+                    "title": "Enrolment Share (%)",
+                    "scale": {
+                        "domain": [
+                            0,
+                            50
+                        ]
+                    },
+                    "axis": {
+                        "labelFontSize": 11,
+                        "titleFontSize": 13
+                    }
+                },
+                "color": {
+                    "field": "SES_Label",
+                    "type": "nominal",
+                    "title": "Socioeconomic Status",
+                    "scale": {
+                        "domain": [
+                            "Low SES",
+                            "High SES"
+                        ],
+                        "range": [
+                            "#e63946",
+                            "#1d3557"
+                        ]
+                    },
+                    "legend": {
+                        "orient": "right",
+                        "titleFontSize": 12,
+                        "labelFontSize": 11
+                    }
+                },
+                "tooltip": [
+                    {
+                        "field": "Discipline",
+                        "type": "nominal",
+                        "title": "Discipline"
+                    },
+                    {
+                        "field": "SES_Label",
+                        "type": "nominal",
+                        "title": "SES Group"
+                    },
+                    {
+                        "field": "Share_Pct",
+                        "type": "quantitative",
+                        "title": "Share of Enrolments (%)",
+                        "format": ".1f"
+                    }
+                ]
+            }
+        }
+    ]
+}
