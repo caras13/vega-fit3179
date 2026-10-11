@@ -1,11 +1,55 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "data": {
-    "url": "data/university_stem_2024.csv"
+  "title": {
+    "text": "Tertiary STEM Participation Rate by Australian State & Territory (2024)",
+    "subtitle": "Percentage of total higher education enrolments in STEM disciplines",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
   },
-  "mark": "bar",
+  "width": 700,
+  "height": 450,
+  "projection": {
+    "type": "equirectangular"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-states.json",
+    "format": {
+      "type": "geojson"
+    }
+  },
+  "transform": [
+    {
+      "lookup": "properties.STATE_NAME",
+      "from": {
+        "data": {
+          "url": "data/state_stem_participation.csv"
+        },
+        "key": "State",
+        "fields": ["STEM_Participation_Pct", "Total_STEM", "Total_Students"]
+      }
+    }
+  ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#ffffff",
+    "strokeWidth": 1.2
+  },
   "encoding": {
-    "x": {"field": "State", "type": "nominal"},
-    "y": {"field": "Total_STEM", "type": "quantitative"}
+    "color": {
+      "field": "STEM_Participation_Pct",
+      "type": "quantitative",
+      "title": "STEM Participation (%)",
+      "scale": {
+        "scheme": "blues",
+        "domain": [10, 25]
+      }
+    },
+    "tooltip": [
+      {"field": "properties.STATE_NAME", "type": "nominal", "title": "State/Territory"},
+      {"field": "STEM_Participation_Pct", "type": "quantitative", "title": "STEM Share (%)", "format": ".2f"},
+      {"field": "Total_STEM", "type": "quantitative", "title": "Total STEM Enrolments", "format": ","},
+      {"field": "Total_Students", "type": "quantitative", "title": "Total Tertiary Students", "format": ","}
+    ]
   }
 }

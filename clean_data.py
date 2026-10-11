@@ -80,4 +80,20 @@ if os.path.exists(piv_path):
     df_piv_clean.to_csv(output_path, index=False)
     print(f"--> Generated: {output_path}")
 
+# Export State-Level STEM Participation Rates
+state_summary = df_sec2_clean.groupby('State').agg(
+    Total_STEM=('Total_STEM', 'sum'),
+    Total_Students=('Total', 'sum')
+).reset_index()
+
+# Filter out non-state summary rows
+state_summary_clean = state_summary[~state_summary['State'].isin(['Multi-State', 'State'])].copy()
+state_summary_clean['STEM_Participation_Pct'] = (
+    state_summary_clean['Total_STEM'] / state_summary_clean['Total_Students'] * 100
+).round(2)
+
+output_path_state = os.path.join(DATA_DIR, 'state_stem_participation.csv')
+state_summary_clean.to_csv(output_path_state, index=False)
+print(f"--> Generated: {output_path_state}")
+
 print("Data cleaning complete! All CSV files are ready in the 'data/' folder.")
