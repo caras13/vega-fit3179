@@ -1,0 +1,109 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Discipline Graduate Performance Outcomes Parallel Coordinates (2024)",
+    "subtitle": "Multivariate outcomes across STEM disciplines (Normalized 0–100 Scale)",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 580,
+  "height": 380,
+  "data": {
+    "url": "data/graduate_performance.csv"
+  },
+  "transform": [
+    {
+      "fold": ["Employment_Rate_Pct", "Median_Salary_AUD", "Satisfaction_Pct", "Further_Study_Pct"],
+      "as": ["Metric", "Raw_Value"]
+    },
+    {
+      "calculate": "datum.Metric == 'Employment_Rate_Pct' ? 'Employment Rate (%)' : datum.Metric == 'Median_Salary_AUD' ? 'Median Salary ($)' : datum.Metric == 'Satisfaction_Pct' ? 'Satisfaction (%)' : 'Further Study (%)'",
+      "as": ["Metric_Label"]
+    },
+    {
+      "calculate": "datum.Metric == 'Employment_Rate_Pct' ? (datum.Raw_Value - 60) / (90 - 60) * 100 : datum.Metric == 'Median_Salary_AUD' ? (datum.Raw_Value - 60000) / (85000 - 60000) * 100 : datum.Metric == 'Satisfaction_Pct' ? (datum.Raw_Value - 70) / (90 - 70) * 100 : (datum.Raw_Value - 10) / (50 - 10) * 100",
+      "as": ["Norm_Value"]
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "line",
+        "strokeWidth": 3,
+        "opacity": 0.85
+      },
+      "encoding": {
+        "x": {
+          "field": "Metric_Label",
+          "type": "nominal",
+          "title": "Graduate Outcome Metric",
+          "sort": ["Employment Rate (%)", "Median Salary ($)", "Satisfaction (%)", "Further Study (%)"],
+          "axis": {
+            "labelFontSize": 11,
+            "titleFontSize": 13,
+            "labelAngle": 0
+          }
+        },
+        "y": {
+          "field": "Norm_Value",
+          "type": "quantitative",
+          "title": "Normalized Performance Index (0–100)",
+          "scale": {"domain": [0, 100]},
+          "axis": {
+            "labelFontSize": 11,
+            "titleFontSize": 13
+          }
+        },
+        "color": {
+          "field": "Discipline",
+          "type": "nominal",
+          "title": "STEM Discipline",
+          "scale": {
+            "scheme": "category10"
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+        "detail": {
+          "field": "Discipline"
+        },
+        "tooltip": [
+          {"field": "Discipline", "type": "nominal", "title": "Discipline"},
+          {"field": "Metric_Label", "type": "nominal", "title": "Metric"},
+          {"field": "Raw_Value", "type": "quantitative", "title": "Actual Value", "format": ",.1f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "point",
+        "size": 70,
+        "filled": true
+      },
+      "encoding": {
+        "x": {
+          "field": "Metric_Label",
+          "type": "nominal",
+          "sort": ["Employment Rate (%)", "Median Salary ($)", "Satisfaction (%)", "Further Study (%)"]
+        },
+        "y": {
+          "field": "Norm_Value",
+          "type": "quantitative"
+        },
+        "color": {
+          "field": "Discipline",
+          "type": "nominal"
+        },
+        "tooltip": [
+          {"field": "Discipline", "type": "nominal", "title": "Discipline"},
+          {"field": "Metric_Label", "type": "nominal", "title": "Metric"},
+          {"field": "Raw_Value", "type": "quantitative", "title": "Actual Value", "format": ",.1f"}
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Higher Education STEM Discipline Hierarchy Enrolment (2024)",
+    "subtitle": "Hierarchical domestic student enrolment volume across broad and detailed STEM fields",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 550,
+  "height": 380,
+  "data": {
+    "url": "data/discipline_hierarchy.csv"
+  },
+  "layer": [
+    {
+      "mark": {
+        "type": "bar",
+        "cornerRadiusEnd": 3
+      },
+      "encoding": {
+        "y": {
+          "field": "Detailed_Field",
+          "type": "nominal",
+          "title": "Detailed Discipline",
+          "sort": {"field": "Enrolments", "order": "descending"},
+          "axis": {
+            "labelFontSize": 11,
+            "titleFontSize": 13,
+            "titlePadding": 10
+          }
+        },
+        "x": {
+          "field": "Enrolments",
+          "type": "quantitative",
+          "title": "Domestic Student Enrolments",
+          "axis": {
+            "labelFontSize": 11,
+            "titleFontSize": 13
+          }
+        },
+        "color": {
+          "field": "Broad_Field",
+          "type": "nominal",
+          "title": "Broad STEM Field",
+          "scale": {
+            "domain": [
+              "Natural & Physical Sciences",
+              "Information Technology",
+              "Engineering & Tech",
+              "Agriculture & Environment"
+            ],
+            "range": ["#1f77b4", "#00b4d8", "#e63946", "#2a9d8f"]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+        "tooltip": [
+          {"field": "Broad_Field", "type": "nominal", "title": "Broad Field"},
+          {"field": "Detailed_Field", "type": "nominal", "title": "Detailed Discipline"},
+          {"field": "Enrolments", "type": "quantitative", "title": "Enrolments", "format": ","}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 5,
+        "fontSize": 11,
+        "fontWeight": "bold"
+      },
+      "encoding": {
+        "y": {
+          "field": "Detailed_Field",
+          "type": "nominal",
+          "sort": {"field": "Enrolments", "order": "descending"}
+        },
+        "x": {
+          "field": "Enrolments",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "Enrolments",
+          "type": "quantitative",
+          "format": ","
+        }
+      }
+    }
+  ]
+}

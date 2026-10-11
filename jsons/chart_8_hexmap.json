@@ -1,0 +1,99 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Domestic vs International Student Concentration Across States (2024)",
+    "subtitle": "Hexagonal tile layout representing international student enrolment share (%)",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 580,
+  "height": 380,
+  "data": {
+    "url": "data/hex_state_concentration.csv"
+  },
+  "transform": [
+    {
+      "calculate": "format(datum.Intl_Share_Pct, '.1f') + '%'",
+      "as": "Intl_Share_Label"
+    }
+  ],
+  "layer": [
+    {
+      "mark": {
+        "type": "point",
+        "shape": "M 0 -1 L 0.866 -0.5 L 0.866 0.5 L 0 1 L -0.866 0.5 L -0.866 -0.5 Z",
+        "size": 6500,
+        "filled": true,
+        "stroke": "#ffffff",
+        "strokeWidth": 2
+      },
+      "encoding": {
+        "x": {
+          "field": "col",
+          "type": "quantitative",
+          "scale": {"domain": [0.5, 4.5]},
+          "axis": null
+        },
+        "y": {
+          "field": "row",
+          "type": "quantitative",
+          "scale": {"domain": [0.5, 4.5], "reverse": true},
+          "axis": null
+        },
+        "color": {
+          "field": "Intl_Share_Pct",
+          "type": "quantitative",
+          "title": "International Share (%)",
+          "scale": {
+            "scheme": "purples",
+            "domain": [25, 40]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+        "tooltip": [
+          {"field": "State_Name", "type": "nominal", "title": "State / Territory"},
+          {"field": "Domestic", "type": "quantitative", "title": "Domestic Enrolments", "format": ","},
+          {"field": "International", "type": "quantitative", "title": "International Enrolments", "format": ","},
+          {"field": "Intl_Share_Pct", "type": "quantitative", "title": "International Share (%)", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "baseline": "bottom",
+        "dy": -2,
+        "fontSize": 13,
+        "fontWeight": "bold",
+        "color": "#ffffff"
+      },
+      "encoding": {
+        "x": {"field": "col", "type": "quantitative"},
+        "y": {"field": "row", "type": "quantitative"},
+        "text": {"field": "State", "type": "nominal"}
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "baseline": "top",
+        "dy": 4,
+        "fontSize": 10,
+        "color": "#f8f9fa"
+      },
+      "encoding": {
+        "x": {"field": "col", "type": "quantitative"},
+        "y": {"field": "row", "type": "quantitative"},
+        "text": {"field": "Intl_Share_Label", "type": "nominal"}
+      }
+    }
+  ],
+  "config": {
+    "view": {"stroke": null}
+  }
+}

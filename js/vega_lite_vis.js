@@ -32,3 +32,18 @@ vegaEmbed('#chart_6', 'jsons/chart_6_heatmap.json', { "actions": false })
 vegaEmbed('#chart_7', 'jsons/chart_7_sankey.json', { "actions": false })
   .then(() => console.log("Chart 7 loaded"))
   .catch(console.error);
+
+  // Chart 8: Hexagonal Tile Map
+vegaEmbed('#chart_8', 'jsons/chart_8_hexmap.json', { "actions": false })
+  .then(() => console.log("Chart 8 loaded"))
+  .catch(console.error);
+
+// Chart 9: Discipline Hierarchy Treemap
+vegaEmbed('#chart_9', 'jsons/chart_9_treemap.json', { "actions": false })
+  .then(() => console.log("Chart 9 loaded"))
+  .catch(console.error);
+
+// Chart 10: Graduate Performance Parallel Coordinates Plot
+vegaEmbed('#chart_10', 'jsons/chart_10_parallel.json', { "actions": false })
+  .then(() => console.log("Chart 10 loaded"))
+  .catch(console.error);
