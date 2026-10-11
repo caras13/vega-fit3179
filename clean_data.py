@@ -92,6 +92,9 @@ state_summary_clean['STEM_Participation_Pct'] = (
     state_summary_clean['Total_STEM'] / state_summary_clean['Total_Students'] * 100
 ).round(2)
 
+# Rename 'State' to 'STATE_NAME'
+state_summary_clean = state_summary_clean.rename(columns={'State': 'STATE_NAME'})
+
 output_path_state = os.path.join(DATA_DIR, 'state_stem_participation.csv')
 state_summary_clean.to_csv(output_path_state, index=False)
 print(f"--> Generated: {output_path_state}")

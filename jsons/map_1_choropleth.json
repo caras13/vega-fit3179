@@ -12,44 +12,87 @@
   "projection": {
     "type": "equirectangular"
   },
-  "data": {
-    "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-states.json",
-    "format": {
-      "type": "geojson"
-    }
-  },
-  "transform": [
+  "layer": [
     {
-      "lookup": "properties.STATE_NAME",
-      "from": {
-        "data": {
-          "url": "data/state_stem_participation.csv"
-        },
-        "key": "State",
-        "fields": ["STEM_Participation_Pct", "Total_STEM", "Total_Students"]
-      }
-    }
-  ],
-  "mark": {
-    "type": "geoshape",
-    "stroke": "#ffffff",
-    "strokeWidth": 1.2
-  },
-  "encoding": {
-    "color": {
-      "field": "STEM_Participation_Pct",
-      "type": "quantitative",
-      "title": "STEM Participation (%)",
-      "scale": {
-        "scheme": "blues",
-        "domain": [10, 25]
+      "data": {
+        "url": "data/australia_states.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#e9ecef",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.2
       }
     },
-    "tooltip": [
-      {"field": "properties.STATE_NAME", "type": "nominal", "title": "State/Territory"},
-      {"field": "STEM_Participation_Pct", "type": "quantitative", "title": "STEM Share (%)", "format": ".2f"},
-      {"field": "Total_STEM", "type": "quantitative", "title": "Total STEM Enrolments", "format": ","},
-      {"field": "Total_Students", "type": "quantitative", "title": "Total Tertiary Students", "format": ","}
-    ]
-  }
+    {
+      "data": {
+        "url": "data/australia_states.geojson",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "transform": [
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": {
+              "url": "data/state_stem_participation.csv"
+            },
+            "key": "STATE_NAME",
+            "fields": [
+              "STEM_Participation_Pct",
+              "Total_STEM",
+              "Total_Students"
+            ]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.2
+      },
+      "encoding": {
+        "color": {
+          "field": "STEM_Participation_Pct",
+          "type": "quantitative",
+          "title": "STEM Share (%)",
+          "scale": {
+            "scheme": "blues",
+            "domain": [10, 25]
+          }
+        },
+        "tooltip": [
+          {
+            "field": "properties.STATE_NAME",
+            "type": "nominal",
+            "title": "State / Territory"
+          },
+          {
+            "field": "STEM_Participation_Pct",
+            "type": "quantitative",
+            "title": "STEM Participation (%)",
+            "format": ".2f"
+          },
+          {
+            "field": "Total_STEM",
+            "type": "quantitative",
+            "title": "Total STEM Enrolments",
+            "format": ","
+          },
+          {
+            "field": "Total_Students",
+            "type": "quantitative",
+            "title": "Total Tertiary Students",
+            "format": ","
+          }
+        ]
+      }
+    }
+  ]
 }
