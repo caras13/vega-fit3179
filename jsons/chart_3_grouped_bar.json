@@ -1,8 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
-    "text": "NAPLAN Numeracy Proficiency Standard Achievement by Geographic Location",
-    "subtitle": "Percentage of students achieving 'Strong' or 'Exceeding' proficiency across Year levels (3, 5, 7, 9)",
+    "text": "NAPLAN Numeracy Proficiency Benchmark Achievement by School Location",
+    "subtitle": "Percentage of students achieving 'Strong' or 'Exceeding' proficiency standard across Year levels",
     "fontSize": 16,
     "subtitleFontSize": 12,
     "anchor": "start"
@@ -22,7 +22,12 @@
       "field": "Year_Level",
       "type": "nominal",
       "title": "NAPLAN School Year Level",
-      "sort": ["Year 3", "Year 5", "Year 7", "Year 9"],
+      "sort": [
+        "Year 3",
+        "Year 5",
+        "Year 7",
+        "Year 9"
+      ],
       "axis": {
         "labelFontSize": 12,
         "titleFontSize": 13,
@@ -37,7 +42,10 @@
       "type": "quantitative",
       "title": "Students Meeting Benchmark (%)",
       "scale": {
-        "domain": [0, 100]
+        "domain": [
+          0,
+          100
+        ]
       },
       "axis": {
         "labelFontSize": 11,
@@ -47,21 +55,44 @@
     "color": {
       "field": "Subgroup",
       "type": "nominal",
-      "title": "Geographic Location",
+      "title": "Geographic Remoteness",
       "scale": {
-        "domain": ["Major Cities", "Inner Regional", "Outer Regional", "Remote & Very Remote"],
-        "range": ["#1f77b4", "#48cae4", "#f77f00", "#d62728"]
+        "domain": [
+          "Major Cities",
+          "Inner Regional",
+          "Outer Regional",
+          "Remote & Very Remote"
+        ],
+        "range": [
+          "#1f77b4",
+          "#48cae4",
+          "#f77f00",
+          "#d62728"
+        ]
       },
       "legend": {
-        "orient": "top",
+        "orient": "right",
         "titleFontSize": 12,
         "labelFontSize": 11
       }
     },
     "tooltip": [
-      {"field": "Year_Level", "type": "nominal", "title": "Year Level"},
-      {"field": "Subgroup", "type": "nominal", "title": "Location Group"},
-      {"field": "Pct_Proficient", "type": "quantitative", "title": "% Meeting Standard", "format": ".1f"}
+      {
+        "field": "Year_Level",
+        "type": "nominal",
+        "title": "Year Level"
+      },
+      {
+        "field": "Subgroup",
+        "type": "nominal",
+        "title": "Location Group"
+      },
+      {
+        "field": "Pct_Proficient",
+        "type": "quantitative",
+        "title": "% Meeting Benchmark",
+        "format": ".1f"
+      }
     ]
   }
 }
