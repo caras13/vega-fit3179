@@ -14,6 +14,34 @@
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <!-- Navigation Drawer Controller Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const hamburgerBtn = document.getElementById('hamburger-btn');
+      const sideNav = document.getElementById('side-nav');
+      const navOverlay = document.getElementById('nav-overlay');
+
+      function toggleMenu(event) {
+        if (event) event.stopPropagation();
+        sideNav.classList.toggle('active');
+        navOverlay.classList.toggle('active');
+      }
+
+      if (hamburgerBtn) {
+        hamburgerBtn.addEventListener('click', toggleMenu);
+      }
+      if (navOverlay) {
+        navOverlay.addEventListener('click', toggleMenu);
+      }
+
+      document.querySelectorAll('#side-nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          sideNav.classList.remove('active');
+          navOverlay.classList.remove('active');
+        });
+      });
+    });
+  </script>
 </head>
 
 <body>
@@ -38,7 +66,8 @@
     <!-- Dashboard Header -->
     <header id="header" class="header-card">
       <h1>STEM Education in Australia: Pathways & Equity</h1>
-      <p class="subtitle">An analytical exploration of secondary foundations, tertiary enrolment patterns, regional equity disparities, and future workforce readiness across Australia.</p>
+      <p class="subtitle">An analytical exploration of secondary foundations, tertiary enrolment patterns, regional
+        equity disparities, and future workforce readiness across Australia.</p>
     </header>
 
     <!-- SECTION 1: School Level & Regional STEM Foundation -->
@@ -50,12 +79,15 @@
         <div class="pure-g">
           <div class="pure-u-1 pure-u-md-1-4 narrative">
             <h3>State & Territory Participation Choropleth</h3>
-            <p>Senior secondary STEM engagement varies noticeably across state jurisdictions. While eastern states maintain STEM participation above <strong>23%</strong>, regional territories like the Northern Territory lag at <strong>10.5%</strong> due to resource constraints.</p>
-            
+            <p>Senior secondary STEM engagement varies noticeably across state jurisdictions. While eastern states
+              maintain STEM participation above <strong>23%</strong>, regional territories like the Northern Territory
+              lag at <strong>10.5%</strong> due to resource constraints.</p>
+
             <div class="key-insight-container">
               <div class="insight-trigger"><span class="emoji">💡</span> Key Observation (Hover to reveal)</div>
               <div class="insight-content">
-                State-level funding disparity creates an 11% participation gap between metropolitan hubs and remote territories.
+                State-level funding disparity creates an 11% participation gap between metropolitan hubs and remote
+                territories.
               </div>
             </div>
           </div>
@@ -71,12 +103,14 @@
           <div class="card card-half">
             <div class="narrative">
               <h3>Metropolitan vs Regional Gap</h3>
-              <p>Specialized subject selection reveals severe rural barriers, with Metro participation exceeding Regional schools by over 10 percentage points in Physics and Advanced Math.</p>
-              
+              <p>Specialized subject selection reveals severe rural barriers, with Metro participation exceeding
+                Regional schools by over 10 percentage points in Physics and Advanced Math.</p>
+
               <div class="key-insight-container">
                 <div class="insight-trigger"><span class="emoji">💡</span> Key Observation</div>
                 <div class="insight-content">
-                  Outer regional schools struggle to retain qualified STEM teaching staff, lowering advanced math enrolments.
+                  Outer regional schools struggle to retain qualified STEM teaching staff, lowering advanced math
+                  enrolments.
                 </div>
               </div>
             </div>
@@ -88,12 +122,14 @@
           <div class="card card-half">
             <div class="narrative">
               <h3>NAPLAN Numeracy Proficiency</h3>
-              <p>Foundational numeracy gaps broaden continuously from Year 3 to Year 9, with Remote proficiency falling below 20% compared to 65% in Major Cities.</p>
-              
+              <p>Foundational numeracy gaps broaden continuously from Year 3 to Year 9, with Remote proficiency falling
+                below 20% compared to 65% in Major Cities.</p>
+
               <div class="key-insight-container">
                 <div class="insight-trigger"><span class="emoji">💡</span> Key Observation</div>
                 <div class="insight-content">
-                  Early primary intervention before Year 5 is critical to prevent compounding numeracy deficits in secondary years.
+                  Early primary intervention before Year 5 is critical to prevent compounding numeracy deficits in
+                  secondary years.
                 </div>
               </div>
             </div>
@@ -107,7 +143,9 @@
         <div class="pure-g">
           <div class="pure-u-1 pure-u-md-1-3 narrative">
             <h3>State STEM Volume Dorling Cartogram</h3>
-            <p>This Dorling cartogram distorts geographic boundaries into proportional circles scaled by total STEM enrolments. New South Wales and Victoria anchor the overwhelming majority of Australia's STEM cohort (exceeding <strong>144,000 combined students</strong>).</p>
+            <p>This Dorling cartogram distorts geographic boundaries into proportional circles scaled by total STEM
+              enrolments. New South Wales and Victoria anchor the overwhelming majority of Australia's STEM cohort
+              (exceeding <strong>144,000 combined students</strong>).</p>
           </div>
           <div class="pure-u-1 pure-u-md-2-3">
             <div id="map_3" class="vis-container"></div>
@@ -125,7 +163,9 @@
         <div class="pure-g">
           <div class="pure-u-1 pure-u-md-1-3 narrative">
             <h3>Campus Enrolment Distribution</h3>
-            <p>University-level STEM enrolments are heavily clustered around major capital campuses, with UNSW Sydney, Monash University, and The University of Sydney hosting the largest cohorts exceeding <strong>15,000 STEM students each</strong>.</p>
+            <p>University-level STEM enrolments are heavily clustered around major capital campuses, with UNSW Sydney,
+              Monash University, and The University of Sydney hosting the largest cohorts exceeding <strong>15,000 STEM
+                students each</strong>.</p>
           </div>
           <div class="pure-u-1 pure-u-md-2-3">
             <div id="map_2" class="vis-container"></div>
@@ -138,11 +178,14 @@
         <div class="pure-g">
           <div class="pure-u-1 narrative">
             <h3>State STEM Enrolments & Gender Balance by Field</h3>
-            <p>Use the dropdown menu below to inspect state-level enrolment volumes and gender disparities across key STEM fields. While Natural Sciences achieves gender parity (over <strong>50% female share</strong>), Information Technology and Engineering display persistent gender gaps across all states.</p>
+            <p>Use the dropdown menu below to inspect state-level enrolment volumes and gender disparities across key
+              STEM fields. While Natural Sciences achieves gender parity (over <strong>50% female share</strong>),
+              Information Technology and Engineering display persistent gender gaps across all states.</p>
             <div class="key-insight-container" style="margin-top: 15px;">
               <div class="insight-trigger"><span class="emoji">💡</span> Key Observation</div>
               <div class="insight-content">
-                Female participation remains starkly suppressed under 23% in technical fields (IT & Engineering) across every Australian state, whereas life and physical sciences maintain equal representation.
+                Female participation remains starkly suppressed under 23% in technical fields (IT & Engineering) across
+                every Australian state, whereas life and physical sciences maintain equal representation.
               </div>
             </div>
             <div id="map_4" class="vis-container" style="margin-top: 10px;"></div>
@@ -166,7 +209,8 @@
           <div class="card card-half">
             <div class="narrative">
               <h3>Study Load Distribution</h3>
-              <p>A comparison of full-time vs part-time study modes across states, reflecting different regional workforce integrations.</p>
+              <p>A comparison of full-time vs part-time study modes across states, reflecting different regional
+                workforce integrations.</p>
             </div>
             <div id="chart_6" class="vis-container"></div>
           </div>
@@ -178,7 +222,8 @@
         <div class="pure-g">
           <div class="pure-u-1 pure-u-md-1-3 narrative">
             <h3>High School → Degree → STEM Pathways</h3>
-            <p>Students originating from regional high schools transition overwhelmingly into Health and Agricultural sciences, whereas metropolitan graduates feed directly into Undergraduate Engineering and IT tracks.</p>
+            <p>Students originating from regional high schools transition overwhelmingly into Health and Agricultural
+              sciences, whereas metropolitan graduates feed directly into Undergraduate Engineering and IT tracks.</p>
           </div>
           <div class="pure-u-1 pure-u-md-2-3">
             <div id="chart_7" class="vis-container"></div>
@@ -197,7 +242,8 @@
           <div class="card card-half">
             <div class="narrative">
               <h3>Domestic vs International Tile Map</h3>
-              <p>International student concentration peaks in Victoria (38.0%) and ACT (37.2%), whereas Tasmania and Queensland display higher domestic proportions.</p>
+              <p>International student concentration peaks in Victoria (38.0%) and ACT (37.2%), whereas Tasmania and
+                Queensland display higher domestic proportions.</p>
             </div>
             <div id="chart_8" class="vis-container"></div>
           </div>
@@ -207,7 +253,8 @@
           <div class="card card-half">
             <div class="narrative">
               <h3>Discipline Enrolment Ranking</h3>
-              <p>Computer Science and Software Engineering constitute the largest detailed sub-fields in IT, while Biological Sciences dominates Natural Sciences.</p>
+              <p>Computer Science and Software Engineering constitute the largest detailed sub-fields in IT, while
+                Biological Sciences dominates Natural Sciences.</p>
             </div>
             <div id="chart_9" class="vis-container"></div>
           </div>
@@ -219,7 +266,8 @@
         <div class="pure-g">
           <div class="pure-u-1 pure-u-md-1-3 narrative">
             <h3>Graduate Performance Parallel Plot</h3>
-            <p>Engineering and Computer Science graduates achieve high immediate employment (<strong>>86%</strong>) and top median starting salaries (<strong>$78,000–$82,000</strong>).</p>
+            <p>Engineering and Computer Science graduates achieve high immediate employment (<strong>>86%</strong>) and
+              top median starting salaries (<strong>$78,000–$82,000</strong>).</p>
           </div>
           <div class="pure-u-1 pure-u-md-2-3">
             <div id="chart_10" class="vis-container"></div>
@@ -238,7 +286,8 @@
           <div class="card card-half">
             <div class="narrative">
               <h3>Projected Employment Streamgraph</h3>
-              <p>Clean Energy and Tech/Cyber Security exhibit expanding streams toward 2030, driven by decarbonization and digital expansion.</p>
+              <p>Clean Energy and Tech/Cyber Security exhibit expanding streams toward 2030, driven by decarbonization
+                and digital expansion.</p>
             </div>
             <div id="chart_11" class="vis-container"></div>
           </div>
@@ -248,7 +297,8 @@
           <div class="card card-half">
             <div class="narrative">
               <h3>10-Year Discipline Enrolment Trends</h3>
-              <p>Computer Science and IT enrolments surged by <strong>149%</strong> over the past decade, overtaking Engineering in 2022.</p>
+              <p>Computer Science and IT enrolments surged by <strong>149%</strong> over the past decade, overtaking
+                Engineering in 2022.</p>
             </div>
             <div id="chart_12" class="vis-container"></div>
           </div>
@@ -258,10 +308,14 @@
 
     <!-- Footer Section -->
     <footer id="footer" class="footer-card" style="color:black;">
-      <p>Data sources: 
-        <a href="https://www.education.gov.au/higher-education-statistics/resources/perturbed-student-enrolments-pivot-table-2024" target="_blank" rel="noopener">Student Enrollment Pivot Table</a> & 
-        <a href="https://www.industry.gov.au/publications/stem-equity-monitor/filter-data-stem-equity-monitor" target="_blank" rel="noopener">Stem Equity Monitor</a> &
-        <a href="https://www.jobsandskills.gov.au/data/occupation-and-industry-profiles" target="_blank" rel="noopener">Census</a>.</p>
+      <p>Data sources:
+        <a href="https://www.education.gov.au/higher-education-statistics/resources/perturbed-student-enrolments-pivot-table-2024"
+          target="_blank" rel="noopener">Student Enrollment Pivot Table</a> &
+        <a href="https://www.industry.gov.au/publications/stem-equity-monitor/filter-data-stem-equity-monitor"
+          target="_blank" rel="noopener">Stem Equity Monitor</a> &
+        <a href="https://www.jobsandskills.gov.au/data/occupation-and-industry-profiles" target="_blank"
+          rel="noopener">Census</a>.
+      </p>
       <div class="footer-meta" style="color:black;">
         FIT3179 Data Visualisation 2 | Created By: Cara Sim Li Xuan | Student ID: 36622842 | Studio 16
       </div>
