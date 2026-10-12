@@ -1,0 +1,33 @@
+STATE_NAME,State,lat,lon,Discipline,Enrolments,Female_Pct,Low_SES_Pct
+New South Wales,NSW,-31.5,147.0,Information Technology,22400,21.5,14.8
+Victoria,VIC,-37.2,143.8,Information Technology,20100,22.8,13.9
+Queensland,QLD,-21.5,144.5,Information Technology,12800,19.4,17.2
+Western Australia,WA,-25.0,122.5,Information Technology,6500,20.1,12.5
+South Australia,SA,-30.0,135.0,Information Technology,4200,18.6,16.8
+Australian Capital Territory,ACT,-35.0,150.5,Information Technology,2800,24.2,6.1
+Tasmania,TAS,-41.0,146.5,Information Technology,1100,17.5,21.0
+Northern Territory,NT,-19.0,133.5,Information Technology,320,16.2,26.4
+New South Wales,NSW,-31.5,147.0,Engineering & Related,24800,18.2,14.1
+Victoria,VIC,-37.2,143.8,Engineering & Related,21200,19.5,13.5
+Queensland,QLD,-21.5,144.5,Engineering & Related,14100,17.8,16.9
+Western Australia,WA,-25.0,122.5,Engineering & Related,8900,19.1,13.1
+South Australia,SA,-30.0,135.0,Engineering & Related,4800,16.9,15.8
+Australian Capital Territory,ACT,-35.0,150.5,Engineering & Related,1900,21.0,5.8
+Tasmania,TAS,-41.0,146.5,Engineering & Related,1350,15.4,20.5
+Northern Territory,NT,-19.0,133.5,Engineering & Related,280,14.0,27.2
+New South Wales,NSW,-31.5,147.0,Natural & Physical Sciences,26100,51.4,15.9
+Victoria,VIC,-37.2,143.8,Natural & Physical Sciences,21800,52.8,15.2
+Queensland,QLD,-21.5,144.5,Natural & Physical Sciences,14800,50.2,18.8
+Western Australia,WA,-25.0,122.5,Natural & Physical Sciences,6800,49.5,14.6
+South Australia,SA,-30.0,135.0,Natural & Physical Sciences,4900,48.7,18.1
+Australian Capital Territory,ACT,-35.0,150.5,Natural & Physical Sciences,1600,54.1,6.4
+Tasmania,TAS,-41.0,146.5,Natural & Physical Sciences,1700,47.9,23.1
+Northern Territory,NT,-19.0,133.5,Natural & Physical Sciences,250,45.2,29.8
+New South Wales,NSW,-31.5,147.0,Agriculture & Environment,6100,48.2,19.5
+Victoria,VIC,-37.2,143.8,Agriculture & Environment,5400,49.1,18.2
+Queensland,QLD,-21.5,144.5,Agriculture & Environment,5800,46.8,22.4
+Western Australia,WA,-25.0,122.5,Agriculture & Environment,2800,45.5,17.8
+South Australia,SA,-30.0,135.0,Agriculture & Environment,2100,44.2,21.0
+Australian Capital Territory,ACT,-35.0,150.5,Agriculture & Environment,450,52.0,7.2
+Tasmania,TAS,-41.0,146.5,Agriculture & Environment,1400,46.1,25.8
+Northern Territory,NT,-19.0,133.5,Agriculture & Environment,180,42.5,31.2

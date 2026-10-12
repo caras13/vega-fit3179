@@ -3,35 +3,24 @@
   "title": {
     "text": "Projected STEM Industry Employment Dynamics (2020–2030)",
     "subtitle": "Streamgraph of projected employment growth (in thousands) across key STEM sectors",
-    "fontSize": 16,
+    "fontSize": 15,
     "subtitleFontSize": 12,
     "anchor": "start"
   },
-  "width": 580,
-  "height": 380,
-  "data": {
-    "url": "data/stem_employment_streamgraph.csv"
-  },
-  "mark": {
-    "type": "area",
-    "interpolate": "monotone"
-  },
+  "width": 520,
+  "height": 340,
+  "data": {"url": "data/stem_employment_streamgraph.csv"},
+  "mark": {"type": "area", "interpolate": "monotone"},
   "encoding": {
     "x": {
       "field": "Year",
       "type": "quantitative",
       "title": "Year",
-      "axis": {
-        "format": "d",
-        "labelFontSize": 11,
-        "titleFontSize": 13,
-        "grid": false
-      }
+      "axis": {"format": "d", "grid": false}
     },
     "y": {
       "field": "Employed_Thousands",
       "type": "quantitative",
-      "title": "Projected Workforce (Thousands)",
       "stack": "center",
       "axis": null
     },
@@ -47,18 +36,14 @@
           "Engineering & Automation",
           "Traditional Manufacturing"
         ],
-        "range": ["#0077b6", "#00b4d8", "#2a9d8f", "#e63946", "#6c757d"]
+        "range": ["#0072B2", "#56B4E9", "#009E73", "#D55E00", "#999999"]
       },
-      "legend": {
-        "orient": "right",
-        "titleFontSize": 12,
-        "labelFontSize": 11
-      }
+      "legend": {"orient": "right"}
     },
     "tooltip": [
-      {"field": "Year", "type": "quantitative", "title": "Year"},
-      {"field": "Industry", "type": "nominal", "title": "Industry Sector"},
-      {"field": "Employed_Thousands", "type": "quantitative", "title": "Employed (Thousands)", "format": ",d"}
+      {"field": "Year", "type": "quantitative"},
+      {"field": "Industry", "type": "nominal"},
+      {"field": "Employed_Thousands", "type": "quantitative", "format": ",d"}
     ]
   }
 }

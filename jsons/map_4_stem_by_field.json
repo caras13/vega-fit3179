@@ -1,0 +1,142 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "State STEM Enrolments & Gender Balance by Field of Study",
+    "subtitle": "Circle size indicates enrolment volume; color represents female student share (%)",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 620,
+  "height": 420,
+  "projection": {
+    "type": "mercator",
+    "scale": 580,
+    "center": [133, -26]
+  },
+  "params": [
+    {
+      "name": "field_select",
+      "value": "Information Technology",
+      "bind": {
+        "input": "select",
+        "options": [
+          "Information Technology",
+          "Engineering & Related",
+          "Natural & Physical Sciences",
+          "Agriculture & Environment"
+        ],
+        "name": "Select STEM Field: "
+      }
+    }
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-states.json",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f8f9fa",
+        "stroke": "#ced4da",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "url": "data/state_stem_by_field.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.Discipline === field_select"
+        }
+      ],
+      "mark": {
+        "type": "circle",
+        "opacity": 0.85,
+        "stroke": "#1d3557",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Enrolments",
+          "type": "quantitative",
+          "title": "State Enrolments",
+          "scale": {
+            "range": [80, 1200],
+            "domain": [0, 30000]
+          },
+          "legend": {
+            "orient": "right",
+            "tickCount": 3,
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+        "color": {
+          "field": "Female_Pct",
+          "type": "quantitative",
+          "title": "Female Share (%)",
+          "scale": {
+            "scheme": "tealblues",
+            "domain": [15, 55]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+        "tooltip": [
+          {"field": "STATE_NAME", "type": "nominal", "title": "State / Territory"},
+          {"field": "Discipline", "type": "nominal", "title": "STEM Field"},
+          {"field": "Enrolments", "type": "quantitative", "title": "Enrolments", "format": ","},
+          {"field": "Female_Pct", "type": "quantitative", "title": "Female Share (%)", "format": ".1f"},
+          {"field": "Low_SES_Pct", "type": "quantitative", "title": "Low SES Share (%)", "format": ".1f"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/state_stem_by_field.csv"
+      },
+      "transform": [
+        {
+          "filter": "datum.Discipline === field_select"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#1d3557"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "State",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

@@ -1,3 +1,34 @@
+// ==========================================================================
+// Hamburger Navigation Drawer Logic
+// ==========================================================================
+document.addEventListener('DOMContentLoaded', function () {
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+  const sideNav = document.getElementById('side-nav');
+  const navOverlay = document.getElementById('nav-overlay');
+  const navLinks = sideNav.querySelectorAll('a');
+
+  function toggleNav() {
+    sideNav.classList.toggle('active');
+    navOverlay.classList.toggle('active');
+  }
+
+  function closeNav() {
+    sideNav.classList.remove('active');
+    navOverlay.classList.remove('active');
+  }
+
+  hamburgerBtn.addEventListener('click', toggleNav);
+  navOverlay.addEventListener('click', closeNav);
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', closeNav);
+  });
+});
+
+// ==========================================================================
+// Vega-Lite Chart Embeddings
+// ==========================================================================
+
 // Chart 1: State Choropleth Map
 vegaEmbed('#map_1', 'jsons/map_1_choropleth.json', { "actions": false })
   .then(() => console.log("Chart 1 loaded"))
@@ -17,6 +48,13 @@ vegaEmbed('#chart_3', 'jsons/chart_3_grouped_bar.json', { "actions": false })
 vegaEmbed('#map_3', 'jsons/map_3_cartogram.json', { "actions": false })
   .then(function(result) {
     console.log("Map 3 loaded");
+  })
+  .catch(console.error);
+
+// Map 4: Interactive State STEM Enrolments by Discipline Field Map
+vegaEmbed('#map_4', 'jsons/map_4_stem_by_field.json', { "actions": false })
+  .then(function(result) {
+    console.log("Map 4 loaded");
   })
   .catch(console.error);
 
@@ -54,6 +92,7 @@ vegaEmbed('#chart_9', 'jsons/chart_9_treemap.json', { "actions": false })
 vegaEmbed('#chart_10', 'jsons/chart_10_parallel.json', { "actions": false })
   .then(() => console.log("Chart 10 loaded"))
   .catch(console.error);
+
 // Chart 11: Projected Industry Employment Streamgraph
 vegaEmbed('#chart_11', 'jsons/chart_11_streamgraph.json', { "actions": false })
   .then(() => console.log("Chart 11 loaded"))
