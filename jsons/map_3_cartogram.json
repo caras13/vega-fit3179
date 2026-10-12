@@ -1,0 +1,113 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Dorling State Cartogram: STEM Enrolment Volume & Participation Rate",
+    "subtitle": "Circle size represents total STEM enrolments; color indicates STEM participation rate (%)",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "anchor": "start"
+  },
+  "width": 620,
+  "height": 460,
+  "projection": {
+    "type": "mercator",
+    "scale": 580,
+    "center": [133, -26]
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/tonywr71/GeoJson-Data/master/australian-states.json",
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
+      },
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f1f3f5",
+        "stroke": "#ced4da",
+        "strokeWidth": 1
+      }
+    },
+    {
+      "data": {
+        "url": "data/state_cartogram_data.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "opacity": 0.85,
+        "stroke": "#1d3557",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "Total_STEM",
+          "type": "quantitative",
+          "title": "Total STEM Enrolments",
+          "scale": {
+            "range": [250, 3200]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+        "color": {
+          "field": "STEM_Participation_Pct",
+          "type": "quantitative",
+          "title": "Participation Rate (%)",
+          "scale": {
+            "scheme": "blues",
+            "domain": [10, 28]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 12,
+            "labelFontSize": 11
+          }
+        },
+        "tooltip": [
+          {"field": "STATE_NAME", "type": "nominal", "title": "State / Territory"},
+          {"field": "Total_STEM", "type": "quantitative", "title": "Total STEM Enrolments", "format": ","},
+          {"field": "Total_Students", "type": "quantitative", "title": "Total Higher Ed Students", "format": ","},
+          {"field": "STEM_Participation_Pct", "type": "quantitative", "title": "STEM Participation Rate (%)", "format": ".2f"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "data/state_cartogram_data.csv"
+      },
+      "mark": {
+        "type": "text",
+        "fontSize": 11,
+        "fontWeight": "bold",
+        "fill": "#1d3557"
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "State",
+          "type": "nominal"
+        }
+      }
+    }
+  ]
+}

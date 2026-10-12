@@ -1,0 +1,9 @@
+STATE_NAME,State,lat,lon,Total_STEM,Total_Students,STEM_Participation_Pct,Low_SES_Share_Pct
+New South Wales,NSW,-31.5,147.0,79405,301283,26.36,15.2
+Victoria,VIC,-37.2,143.8,65018,260525,24.96,14.8
+Queensland,QLD,-21.5,144.5,44593,180863,24.66,18.1
+Western Australia,WA,-25.0,122.5,23389,102359,22.85,13.9
+South Australia,SA,-30.0,135.0,14916,80768,18.47,17.5
+Australian Capital Territory,ACT,-35.0,150.5,6583,27222,24.18,6.2
+Tasmania,TAS,-41.0,146.5,4605,26909,17.11,22.4
+Northern Territory,NT,-19.0,133.5,948,9036,10.49,28.6

@@ -4,13 +4,20 @@ vegaEmbed('#map_1', 'jsons/map_1_choropleth.json', { "actions": false })
   .catch(console.error);
 
 // Chart 2: Metro vs Regional Dumbbell
-vegaEmbed('#vis_dumbbell', 'jsons/chart_2_dumbbell.json', { "actions": false })
+vegaEmbed('#chart_2', 'jsons/chart_2_dumbbell.json', { "actions": false })
   .then(() => console.log("Chart 2 loaded"))
   .catch(console.error);
 
 // Chart 3: NAPLAN Grouped Bar
 vegaEmbed('#chart_3', 'jsons/chart_3_grouped_bar.json', { "actions": false })
   .then(() => console.log("Chart 3 loaded"))
+  .catch(console.error);
+
+// Map 3: State STEM Dorling Cartogram
+vegaEmbed('#map_3', 'jsons/map_3_cartogram.json', { "actions": false })
+  .then(function(result) {
+    console.log("Map 3 loaded");
+  })
   .catch(console.error);
 
 // Chart 4: University Proportional Symbol Map
