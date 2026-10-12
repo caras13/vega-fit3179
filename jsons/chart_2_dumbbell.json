@@ -7,7 +7,7 @@
     "subtitleFontSize": 12,
     "anchor": "start"
   },
-  "width": 620,
+  "width": 400,
   "height": 480,
   "data": {
     "url": "data/metro_vs_regional_participation.csv"
