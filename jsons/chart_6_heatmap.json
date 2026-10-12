@@ -7,8 +7,12 @@
     "subtitleFontSize": 12,
     "anchor": "start"
   },
-  "width": 600,
-  "height": 300,
+  "width": "container",
+    "height": 480,
+    "autosize": {
+        "type": "fit",
+        "contains": "padding"
+    },
   "data": {
     "url": "data/field_gender_matrix.csv"
   },

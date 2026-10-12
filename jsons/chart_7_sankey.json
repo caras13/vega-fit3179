@@ -8,7 +8,7 @@
     "anchor": "start"
   },
   "width": 220,
-  "height": 360,
+  "height": 480,
   "data": {
     "url": "data/pathways_sankey.csv"
   },

@@ -8,7 +8,7 @@
     "anchor": "start"
   },
   "width": 580,
-  "height": 380,
+  "height": 450,
   "data": {
     "url": "data/graduate_performance.csv"
   },

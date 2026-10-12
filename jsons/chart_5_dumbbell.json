@@ -7,8 +7,12 @@
         "subtitleFontSize": 12,
         "anchor": "start"
     },
-    "width": 620,
-    "height": 380,
+    "width": "container",
+    "height": 480,
+    "autosize": {
+        "type": "fit",
+        "contains": "padding"
+    },
     "data": {
         "url": "data/low_vs_high_ses_enrolments.csv"
     },

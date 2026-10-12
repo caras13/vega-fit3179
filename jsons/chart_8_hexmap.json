@@ -7,8 +7,12 @@
     "subtitleFontSize": 12,
     "anchor": "start"
   },
-  "width": 580,
-  "height": 380,
+  "width": "container",
+    "height": 480,
+    "autosize": {
+        "type": "fit",
+        "contains": "padding"
+    },
   "data": {
     "url": "data/hex_state_concentration.csv"
   },

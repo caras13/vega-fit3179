@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Chart 1: State Choropleth Map
 vegaEmbed('#map_1', 'jsons/map_1_choropleth.json', { "actions": false })
-  .then(() => console.log("Chart 1 loaded"))
+  .then(() => console.log("Map 1 loaded"))
   .catch(console.error);
 
 // Chart 2: Metro vs Regional Dumbbell

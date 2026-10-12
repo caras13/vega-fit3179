@@ -2,7 +2,7 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "title": {
     "text": "Higher Education STEM Discipline Hierarchy Enrolment (2024)",
-    "subtitle": "Hierarchical domestic student enrolment volume across broad and detailed STEM fields",
+    "subtitle": "Ranked domestic student enrolment volume across detailed STEM disciplines",
     "fontSize": 16,
     "subtitleFontSize": 12,
     "anchor": "start"

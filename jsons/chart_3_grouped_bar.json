@@ -8,7 +8,7 @@
     "anchor": "start"
   },
   "width": 580,
-  "height": 380,
+  "height": 480,
   "data": {
     "url": "data/naplan_numeracy_proficiency.csv"
   },
