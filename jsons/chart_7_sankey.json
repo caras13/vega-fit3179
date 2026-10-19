@@ -30,10 +30,12 @@
       "field": "Students",
       "type": "quantitative",
       "aggregate": "sum",
-      "title": "Total Student Volume",
+      "stack": "normalize",
+      "title": "Proportion of Students",
       "axis": {
         "labelFontSize": 11,
-        "titleFontSize": 13
+        "titleFontSize": 13,
+        "format": ".0%"
       }
     },
     "color": {
@@ -41,7 +43,20 @@
       "type": "nominal",
       "title": "STEM Discipline",
       "scale": {
-        "scheme": "category10"
+        "domain": [
+          "Agriculture & Environment",
+          "Engineering",
+          "Health & Nursing",
+          "IT",
+          "Physical Sciences"
+        ],
+        "range": [
+          "#0072B2",
+          "#E69F00",
+          "#56B4E9",
+          "#D55E00",
+          "#CC79A7"
+        ]
       },
       "legend": {
         "orient": "right",

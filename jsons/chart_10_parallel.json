@@ -29,6 +29,21 @@
   "layer": [
     {
       "mark": {
+        "type": "rule",
+        "color": "#888888",
+        "strokeWidth": 1.5,
+        "strokeDash": [3, 3]
+      },
+      "encoding": {
+        "x": {
+          "field": "Metric_Label",
+          "type": "nominal",
+          "sort": ["Employment Rate (%)", "Median Salary ($)", "Satisfaction (%)", "Further Study (%)"]
+        }
+      }
+    },
+    {
+      "mark": {
         "type": "line",
         "strokeWidth": 3,
         "opacity": 0.85

@@ -22,7 +22,12 @@
       "field": "Employed_Thousands",
       "type": "quantitative",
       "stack": "center",
-      "axis": null
+      "axis": {
+        "title": "Projected Employment (Thousands)",
+        "labelFontSize": 11,
+        "titleFontSize": 13,
+        "grid": true
+      }
     },
     "color": {
       "field": "Industry",
