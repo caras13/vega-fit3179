@@ -33,9 +33,9 @@
       ],
       "mark": {
         "type": "circle",
-        "opacity": 0.75,
+        "opacity": 0.8,
         "stroke": "#333333",
-        "strokeWidth": 0.5
+        "strokeWidth": 0.6
       },
       "encoding": {
         "longitude": {
@@ -59,7 +59,33 @@
           "type": "nominal",
           "title": "State / Territory",
           "scale": {
-            "scheme": "category10"
+            "domain": [
+              "Australian Capital Territory",
+              "Multi-State",
+              "New South Wales",
+              "Northern Territory",
+              "Queensland",
+              "South Australia",
+              "Tasmania",
+              "Victoria",
+              "Western Australia"
+            ],
+            "range": [
+              "#0072B2",
+              "#7F7F7F",
+              "#009E73",
+              "#D55E00",
+              "#CC79A7",
+              "#E69F00",
+              "#56B4E9",
+              "#332288",
+              "#88CCEE"
+            ]
+          },
+          "legend": {
+            "orient": "right",
+            "titleFontSize": 12,
+            "labelFontSize": 11
           }
         },
         "tooltip": [

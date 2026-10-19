@@ -7,7 +7,7 @@
     "subtitleFontSize": 12,
     "anchor": "start"
   },
-  "width": 580,
+  "width": 460,
   "height": 480,
   "data": {
     "url": "data/naplan_numeracy_proficiency.csv"
