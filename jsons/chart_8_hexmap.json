@@ -8,11 +8,11 @@
     "anchor": "start"
   },
   "width": "container",
-    "height": 480,
-    "autosize": {
-        "type": "fit",
-        "contains": "padding"
-    },
+  "height": 480,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
   "data": {
     "url": "data/hex_state_concentration.csv"
   },
@@ -27,7 +27,7 @@
       "mark": {
         "type": "point",
         "shape": "M 0 -1 L 0.866 -0.5 L 0.866 0.5 L 0 1 L -0.866 0.5 L -0.866 -0.5 Z",
-        "size": 6500,
+        "size": 10000,
         "filled": true,
         "stroke": "#ffffff",
         "strokeWidth": 2
@@ -50,7 +50,7 @@
           "type": "quantitative",
           "title": "International Share (%)",
           "scale": {
-            "scheme": "purples",
+            "scheme": "blues",
             "domain": [25, 40]
           },
           "legend": {
@@ -72,9 +72,9 @@
         "type": "text",
         "baseline": "bottom",
         "dy": -2,
-        "fontSize": 13,
+        "fontSize": 15,
         "fontWeight": "bold",
-        "color": "#ffffff"
+        "color": "#0f172a"
       },
       "encoding": {
         "x": {"field": "col", "type": "quantitative"},
@@ -87,8 +87,9 @@
         "type": "text",
         "baseline": "top",
         "dy": 4,
-        "fontSize": 10,
-        "color": "#f8f9fa"
+        "fontSize": 12,
+        "fontWeight": "600",
+        "color": "#1e293b"
       },
       "encoding": {
         "x": {"field": "col", "type": "quantitative"},

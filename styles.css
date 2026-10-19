@@ -183,18 +183,15 @@ body {
 /* ==========================================================================
    Key Insight Accordions
    ========================================================================== */
+/* ==========================================================================
+   Key Insight Cards (Always Visible)
+   ========================================================================== */
 .key-insight-container {
   margin-top: 14px;
   background: #f0f7ff;
   border-left: 3px solid #0056b3;
   border-radius: 4px;
   padding: 10px 12px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.key-insight-container:hover {
-  background: #e5f0fc;
 }
 
 .insight-trigger {
@@ -207,15 +204,11 @@ body {
 }
 
 .insight-content {
-  display: none;
+  display: block; /* Changed from 'none' to 'block' to keep text always visible */
   font-size: 0.82rem;
   color: #334155;
   margin-top: 6px;
   line-height: 1.4;
-}
-
-.key-insight-container:hover .insight-content {
-  display: block;
 }
 
 /* ==========================================================================
