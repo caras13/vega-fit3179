@@ -7,11 +7,15 @@
     "subtitleFontSize": 12,
     "anchor": "start"
   },
-  "width": 620,
-  "height": 450,
+  "width": "container",
+  "height": 400,
+  "autosize": {
+    "type": "fit",
+    "contains": "padding"
+  },
   "projection": {
     "type": "mercator",
-    "scale": 580,
+    "scale": 520,
     "center": [133, -26]
   },
   "params": [
@@ -75,7 +79,7 @@
           "type": "quantitative",
           "title": "State Enrolments",
           "scale": {
-            "range": [80, 1200],
+            "range": [80, 1000],
             "domain": [0, 30000]
           },
           "legend": {
@@ -119,9 +123,11 @@
       ],
       "mark": {
         "type": "text",
-        "fontSize": 11,
+        "fontSize": 12,
         "fontWeight": "bold",
-        "fill": "#1d3557"
+        "baseline": "bottom",
+        "dy": -14,
+        "fill": "#0f172a"
       },
       "encoding": {
         "longitude": {

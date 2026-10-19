@@ -83,8 +83,8 @@ vegaEmbed('#chart_8', 'jsons/chart_8_hexmap.json', { "actions": false })
   .then(() => console.log("Chart 8 loaded"))
   .catch(console.error);
 
-// Chart 9: Discipline Hierarchy Treemap
-vegaEmbed('#chart_9', 'jsons/chart_9_treemap.json', { "actions": false })
+// Chart 9: Discipline Hierarchy Barchart
+vegaEmbed('#chart_9', 'jsons/chart_9_barchart.json', { "actions": false })
   .then(() => console.log("Chart 9 loaded"))
   .catch(console.error);
 

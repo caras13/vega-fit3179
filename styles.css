@@ -118,6 +118,29 @@ body {
   margin: 0;
   line-height: 1.45;
 }
+/* ==========================================================================
+   Map + Sidebar 2-to-1 Column Grid Fix for map  4
+   ========================================================================== */
+.pure-g.map-row-grid {
+  display: grid !important;
+  grid-template-columns: 2fr 1fr !important; /* 2/3 for map, 1/3 for text */
+  gap: 24px !important;
+  align-items: start !important;
+}
+
+.pure-g.map-row-grid > [class*="pure-u"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+/* Collapse to single column on mobile screens */
+@media screen and (max-width: 900px) {
+  .pure-g.map-row-grid {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+  }
+}
 
 /* ==========================================================================
    Side-by-Side 2-Column Row Fix
